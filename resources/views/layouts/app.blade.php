@@ -70,28 +70,20 @@
 							<li><a href="{{ route('sub_sheets.index') }}">Subfichas</a></li>
 							<li><a href="{{ route('type_choices.index') }}">Tipos de Alternativas</a></li>
 							<li><a href="{{ route('list_choices.index') }}">Alternativas</a></li>
-							<li><a href="">Dados iniciais</a></li>
-							<li><a href="">Ética</a></li>
-							<li><a href="">Regra Fundamental</a></li>
-							<li><a href="">Investigações</a></li>
-							<li><a href="">Fichas</a></li>
-							<li><a href="">Depressão</a></li>
-							<li><a href="">Neuroses</a></li>
-							<li><a href="">Psicoses</a></li>
 						</ul>
 					</li>
 					<li>
 						<a href=""><i class="fa fa-comments-o"></i> <span class="nav-label">Consultas</span><span class="fa arrow"></span></a>
 						<ul class="nav nav-second-level collapse">
-							<li><a href="consultas.html"><div class="fs1" aria-hidden="true"></div>Dados Gerais</a></li>
-							<li><a href=""><div class="fs1" aria-hidden="true"></div>Queixas</a></li>
-							<li><a href=""><div class="fs1" aria-hidden="true"></div>Sintomas</a></li>
-							<li><a href=""><div class="fs1" aria-hidden="true"></div>Observação Corporal</a></li>
-							<li><a href=""><div class="fs1" aria-hidden="true"></div>Perguntas</a></li>
-							<li><a href=""><div class="fs1" aria-hidden="true"></div>Recursos</a></li>
-							<li><a href=""><div class="fs1" aria-hidden="true"></div>OBS</a></li>
-							<li><a href=""><div class="fs1" aria-hidden="true"></div>Hipótese Diagnóstica</a></li>
-							<li><a href=""><div class="fs1" aria-hidden="true"></div>Plano de Procedimentos</a></li>
+							<li><a href="consultas.html">Dados Gerais</a></li>
+							<li><a href="">Queixas</a></li>
+							<li><a href="">Sintomas</a></li>
+							<li><a href="">Observação Corporal</a></li>
+							<li><a href="">Perguntas</a></li>
+							<li><a href="">Recursos</a></li>
+							<li><a href="">OBS</a></li>
+							<li><a href="">Hipótese Diagnóstica</a></li>
+							<li><a href="">Plano de Procedimentos</a></li>
 						</ul>
 					</li>
 					<li>
@@ -102,9 +94,6 @@
 							<li><a href="">Psiconeurose</a></li>
 							<li><a href="">Conversão/Histeria</a></li>
 						</ul>
-					</li>
-					<li>
-						<a href=""><i class="fa fa-address-book-o"></i> <span class="nav-label">Agendas</span>  </a>
 					</li>
 					<li>
 						<a href=""><i class="fa fa-pie-chart"></i> <span class="nav-label">Pesquisas</span><span class="fa arrow"></span></a>
@@ -174,14 +163,6 @@
 							<li><a href="">Blog</a></li>
 							<li><a href="">Chat</a></li>
 							<li><a href="">Aparelho psíquico</a></li>
-						</ul>
-					</li>
-					<li>
-						<a href=""><i class="fa fa-money"></i> <span class="nav-label">Financeiro</span><span class="fa arrow"></span></a>
-						<ul class="nav nav-second-level collapse">
-							<li><a href=""> Pagamentos</a> </li>
-							<li><a href=""> Recebimentos</a></li>
-							<li> <a href=""> Convênios </a> </li>
 						</ul>
 					</li>
 					<li>
