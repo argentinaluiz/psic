@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Arcade extends Model
 {
     protected $fillable = [
-        'document_id','title', 'description', 'url', 'order','deleted'
+        'document_id','title', 'description', 'link', 'order','deleted'
     ];
 
     /**
@@ -18,7 +18,7 @@ class Arcade extends Model
      */
     public function getTableHeaders()
     {
-        return ['ID', 'Título', 'Descrição', 'Url', 'Ordem','Deletado'];
+        return ['ID', 'Título', 'Descrição', 'Link', 'Ordem', 'Deletado'];
     }
 
     /**
@@ -37,8 +37,8 @@ class Arcade extends Model
                 return $this->title;
             case 'Descrição':
                 return $this->description;
-            case 'Url':
-                return $this->url;
+            case 'Link':
+                return $this->link;
             case 'Ordem':
                 return $this->order;
             case 'Deletado':
@@ -57,11 +57,4 @@ class Arcade extends Model
       return $this->belongsTo(Document::class);
     }
   
-    public function getUrlAttribute($value)
-    {
-        $document = $this->document;
-        $url = $document->folders()->where('type','=','pdf')->first()->url;
-  
-        return asset($url);
-    }
 }

@@ -17,10 +17,10 @@ class DocumentsController extends Controller
         if(Gate::denies('documents-view')){
             abort(403,"Não autorizado!");
         }
+        $totalDocuments = Document::where('deleted','=','N')->count();
+        $registros = Document::where('deleted','=','N')->orderBy('id','DESC')->paginate(10);
 
-          $registros = Document::where('deleted','=','N')->orderBy('id','DESC')->paginate(10);
-
-          return view('painel.documents.index',compact('registros'));
+          return view('painel.documents.index',compact('registros', 'totalDocuments'));
     }
 
 
@@ -44,6 +44,10 @@ class DocumentsController extends Controller
             if(!empty($files)):
                 foreach($files as $file):
                     Storage::put($file->getClientOriginalName(), file_get_contents($file));
+                    $data = $request->all();
+                    $auxNome = explode(".",$file->getClientOriginalName());
+                    $documentModel = Document::create(["title"=>$auxNome[0],"description"=>""]);
+                    $documentModel->folders()->create(["url"=>$file->getClientOriginalName(), file_get_contents($file)]);
                 endforeach;
             endif;
             return redirect()->route('documents.index')

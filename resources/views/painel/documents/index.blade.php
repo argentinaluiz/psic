@@ -43,7 +43,7 @@
 				<tr>
 					<td>{{ $registro->id }}</td>
 					<td>{{ $registro->title }}</td>
-					<td>{{ $registro }}</td>
+					<td>{{ $registro-> Url() }}</td>
 					<td>
 						<form action="{{route('documents.destroy',$registro->id)}}" method="post">
 							@can('documents-edit')

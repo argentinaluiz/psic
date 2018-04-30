@@ -7,10 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 class Folder extends Model
 {
     protected $fillable = [
-        "url","type", "document_id"
+        "url","document_id"
       ];
   
       public function document()
       {
         return $this->belongsTo('App\Models\Painel\Document');
       }
+}

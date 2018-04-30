@@ -9,28 +9,18 @@ class Document extends Model
     protected $fillable = [
         "title","description","deleted"
       ];
-  
-
+    
       public function folders()
       {
         return $this->hasMany('App\Models\Painel\Folder');
       }
-    
-      public function somUrl()
+
+
+      public function Url()
       {
-        $url = asset($this->folders()->where('type','=','mp3')->first()->url);
+        $url = asset($this->folders()->first()->url);
         
         return $url;
       }
   
-      public function videoUrl()
-      {
-        $url = asset($this->folders()->where('type','=','mp4')->first()->url);
-        return $url;
-      }
-      public function textoUrl()
-      {
-        $url = asset($this->folders()->where('type','=','pdf')->first()->url);
-        return $url;
-      }
 }

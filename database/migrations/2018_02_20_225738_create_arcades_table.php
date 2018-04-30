@@ -17,9 +17,9 @@ class CreateArcadesTable extends Migration
             $table->increments('id');
             $table->string('title')->nullable();
             $table->string('description')->nullable();
-            $table->string('url');
-            $table->integer('order');
+            $table->string('link')->nullable();
             $table->enum('deleted',["N","S"])->default("N");
+            $table->integer('order')->default(1);
             $table->integer('research_id')->unsigned()->default(1);
             $table->integer('document_id')->unsigned()->default(1);
 

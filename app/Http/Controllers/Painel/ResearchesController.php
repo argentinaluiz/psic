@@ -259,7 +259,7 @@ class ResearchesController extends Controller
         $aux = $research->documents()->where('document_id','=',$document->id)->first();
         $aux->update(['deleted'=>'N','order'=>$order]);
       }else{
-        $research->documents()->create(['document_id'=>$document->id ,'url'=>$document->arcadeUrl(), 'order'=> $order]);
+        $research->documents()->create(['document_id'=>$document->id ,'link'=>$document->Url(), 'order'=> $order]);
       }
 
       return $research->documents;
@@ -315,7 +315,7 @@ class ResearchesController extends Controller
           $research = $arcade->research;
 
           $registro->update($request->all());
-          session()->flash('message','Galeria editada com sucesso');
+          session()->flash('message','Pesquisa editada com sucesso');
           return redirect()->route('researches.arcade', $research);
 
       }
@@ -327,7 +327,7 @@ class ResearchesController extends Controller
       }
 
       $arcade->update(['deleted'=>'S']); 
-      session()->flash('message','Galeria excluída com sucesso');
+      session()->flash('message','Pesquisa excluída com sucesso');
       return redirect()->back();
     }
 

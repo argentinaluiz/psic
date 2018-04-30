@@ -137,9 +137,7 @@ Route::group(['prefix' => 'painel', 'namespace' => 'Painel', 'middleware' => ['a
 
     Route::get('researches/category/{id}', ['as'=>'researches.category','uses'=>'ResearchesController@category']);
     Route::post('researches/category/{category}', ['as'=>'category.store','uses'=>'ResearchesController@categoryStore']);
-    Route::delete('researches/category/{research}/{category}', ['as'=>'category.destroy','uses'=>'ResearchesController@categoryDestroy']);
-
-    Route::resource('researches', 'ResearchesController');
+    Route::delete('researches/category/{research}/{category}', ['as'=>'category.destroy','uses'=>'ResearchesController@categoryDestroy']);  
 
     Route::get('researches/arcade/{research}', ['as'=>'researches.arcade','uses'=>'ResearchesController@indexArcade']);
     Route::get('researches/arcade/create/{research}', ['as'=>'researches.arcade.create','uses'=>'ResearchesController@createArcade']);
@@ -150,6 +148,8 @@ Route::group(['prefix' => 'painel', 'namespace' => 'Painel', 'middleware' => ['a
     Route::put('researches/arcade/update/{arcade}', ['as'=>'researches.arcade.update','uses'=>'ResearchesController@updateArcade']);
     Route::delete('researches/arcade/delete/{arcade}', ['as'=>'researches.arcade.delete','uses'=>'ResearchesController@deleteArcade']);
    
+    Route::resource('researches', 'ResearchesController');
+    
     Route::get('documents/excluidas', ['as'=>'documents.excluidas','uses'=>'DocumentsController@excluidas']);
     Route::put('documents/recupera/{id}', ['as'=>'documents.recupera','uses'=>'DocumentsController@recupera']);
     

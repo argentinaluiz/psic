@@ -1,9 +1,9 @@
 @extends('layouts.app')
-@section('pag_title', 'Pesquisa - Galeria')
+@section('pag_title', 'Pesquisa - Documentos')
 
 @section('breadcrumb')
-    <h2>Pesquisas</h2>
-     {!! Breadcrumb::withLinks(array('Home' => '/', 'Listar pesquisas' => route('researches.index'), 'Galeria' ))!!}
+    <h2>Documentos</h2>
+     {!! Breadcrumb::withLinks(array('Home' => '/', 'Listar documentos' => route('researches.index'), 'Documentos' ))!!}
 @endsection
 
 @section('h5-title')
@@ -20,9 +20,9 @@
 		<table class="table table-striped">
 			<thead>
 				<tr>
-					<th>Documento</th>
 					<th>Título</th>
 					<th>Descrição</th>
+					<th>Link para ver a pesquisa</th>
 					<th>Ordem</th>
 					<th>Ação</th>
 				</tr>
@@ -30,9 +30,9 @@
 			<tbody>
 			@foreach($registros as $registro)
 				<tr>
-					<td></td>
 					<td>{{ $registro->title ? $registro->title : '---' }}</td>
 					<td>{{ $registro->description ? $registro->description : '---' }}</td>
+					<td>{{ $registro->link }}</td>
 					<td>{{ $registro->order }}</td>
 					<td>
 						<form action="{{route('researches.arcade.delete',$registro)}}" method="post">

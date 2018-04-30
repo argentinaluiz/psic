@@ -43,7 +43,7 @@
 					<td>{{ $research->year }}</td>
 					<td>{{ $research->description }}</td>
 					<td>{{ $research->TextCategories }}</td>
-					<td>{{$research->active?'Sim': 'Não'}}</td>
+					<td>{{ $research->active?'Sim': 'Não'}}</td>
 					<td>
 						<a href="{{route('researches.category',['research' => $research->id])}}"><span class="glyphicon glyphicon-tags"></span> Categorias</a> |
 						<a href="{{route('researches.arcade',['research' => $research->id])}}"><span class="glyphicon glyphicon-book"></span> Documentos</a> |
