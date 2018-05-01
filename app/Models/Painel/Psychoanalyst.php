@@ -15,11 +15,11 @@ class Psychoanalyst extends Model
         return $this->belongsToMany(Research::class);//quando estou trabalhando com uma tabela pivot, o método correto é o belongsToMany
     }
 
-    public function toArray()
+    public function toArray() 
     {
         $data = parent::toArray();
         $this->user->makeHidden('userable_type','userable_id');
-        $data['user'] = $this->user;
+        $data['user'] = $this->user; //acrescentar os dados do usuário
         return $data;
     }
 }
