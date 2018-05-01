@@ -148,6 +148,11 @@ Route::group(['prefix' => 'painel', 'namespace' => 'Painel', 'middleware' => ['a
     Route::put('researches/arcade/update/{arcade}', ['as'=>'researches.arcade.update','uses'=>'ResearchesController@updateArcade']);
     Route::delete('researches/arcade/delete/{arcade}', ['as'=>'researches.arcade.delete','uses'=>'ResearchesController@deleteArcade']);
    
+    Route::group(['prefix' => 'researches/{research}', 'as' => 'researches.'],
+    function (){
+        Route::resource('psychoanalysts', 'ClassPsychoanalystsController', ['only' => ['index', 'store', 'destroy']]);
+    });
+
     Route::resource('researches', 'ResearchesController');
     
     Route::get('documents/excluidas', ['as'=>'documents.excluidas','uses'=>'DocumentsController@excluidas']);

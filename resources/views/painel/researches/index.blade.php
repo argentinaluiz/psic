@@ -17,7 +17,7 @@
 		<a class="btn btn-sm btn-primary" href="{{route('researches.create') }}"><span class="glyphicon glyphicon-plus"></span> Criar nova</a>
 	@endcan
 	<div class="cleaner_h15"></div>
-	<table class="table table-striped dataTables-products">
+	<table class="table table-striped exception">
 		<thead>
 		<tr>
 			<th>Id</th>
@@ -35,9 +35,7 @@
 				<tr>
 					<td>{{ $research->id }}</td>
 					<td>
-						
-							<img class="img-responsive" src="{{url("storage/research/{$research->image}")}}" alt="{{$research->id}}" style="max-width: 50px;">
-						
+						<img class="img-responsive" src="{{url("storage/research/{$research->image}")}}" alt="{{$research->id}}" style="max-width: 50px;">
 					</td>
                     <td>{{ $research->title }}</td>
 					<td>{{ $research->year }}</td>
@@ -45,10 +43,11 @@
 					<td>{{ $research->TextCategories }}</td>
 					<td>{{ $research->active?'Sim': 'Não'}}</td>
 					<td>
-						<a href="{{route('researches.category',['research' => $research->id])}}"><span class="glyphicon glyphicon-tags"></span> Categorias</a> |
-						<a href="{{route('researches.arcade',['research' => $research->id])}}"><span class="glyphicon glyphicon-book"></span> Documentos</a> |
-						<a href="{{route('researches.edit',['research' => $research->id])}}"><span class="glyphicon glyphicon-pencil"></span> Editar</a> |
-						<a href="{{route('researches.show',['research' => $research->id])}}"><span class="glyphicon glyphicon-folder-open"></span> Ver</a>
+						<a class="btn btn-link" href="{{route('researches.category',['research' => $research->id])}}"><span class="glyphicon glyphicon-tags"></span> Categorias</a> |
+						<a class="btn btn-link" href="{{route('researches.arcade',['research' => $research->id])}}"><span class="glyphicon glyphicon-book"></span> Documentos</a> |
+						<a class="btn btn-link" href="{{route('researches.psychoanalysts.index',['research' => $research->id])}}"><span class="glyphicon glyphicon-user"></span> Psicanalistas</a> |
+						<a class="btn btn-link" href="{{route('researches.edit',['research' => $research->id])}}"><span class="glyphicon glyphicon-pencil"></span> Editar</a> |
+						<a class="btn btn-link" href="{{route('researches.show',['research' => $research->id])}}"><span class="glyphicon glyphicon-folder-open"></span> Ver</a>
 					</td>
 				</tr>
 			@endforeach
