@@ -21,6 +21,11 @@ class Research extends Model
         return $this->belongsToMany(Category::class);
     }
 
+    public function psychoanalysts()
+    {
+        return $this->belongsToMany(Psychoanalyst::class);
+    }
+
     public function addCategory($category){
         if (is_string($category)) {
             $category = Category::where('name','=',$category)->firstOrFail();
