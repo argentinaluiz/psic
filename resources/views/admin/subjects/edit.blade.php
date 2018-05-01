@@ -2,7 +2,7 @@
 @section('pag_title', 'Subcategoria - Editar')
 
 @section('breadcrumb')
-    <h2>Configurações</h2>
+    <h2>Perguntas</h2>
     {!! Breadcrumb::withLinks(array('Home' => '/', 'Listar subcategorias' => route('subjects.index'), 'Editar subcategoria' ))!!}
 @endsection
 

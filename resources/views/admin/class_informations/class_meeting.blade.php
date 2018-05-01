@@ -2,7 +2,7 @@
 @section('pag_title', 'Subcategoria, ficha e subficha - adicionar')
 
 @section('breadcrumb')
-    <h2>Configurações</h2>
+    <h2>Perguntas</h2>
     {!! Breadcrumb::withLinks(array('Home' => '/', 'Listar categorias' => route('class_informations.index'), 'Nova subcategoria, psicanalista, ficha e subficha' ))!!}
 @endsection
 
