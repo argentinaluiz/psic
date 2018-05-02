@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="form-group">
-            <label class="control-label">Selecionar paciente</label>
+            <label class="control-label">Selecionar psicanalista</label>
             <select class="form-control" name="psychoanalysts"></select>
         </div>
 
