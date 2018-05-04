@@ -17,7 +17,7 @@
         <form action="{{route('category.store',$research->id)}}" method="post">
         {{ csrf_field() }}
         <div class="input-field">
-            <select name="category_id">
+            <select class="form-control" name="category_id">
                 @foreach($category as $value)
                     <option value="{{$value->id}}">{{$value->name}}</option>
                 @endforeach

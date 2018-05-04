@@ -15,7 +15,7 @@
     <form action="{{route('users.role.store',$user->id)}}" method="post">
     {{ csrf_field() }}
     <div class="input-field">
-        <select name="role_id">
+        <select class="form-control" name="role_id">
             @foreach($role as $value)
                 <option value="{{$value->id}}">{{$value->name}}</option>
             @endforeach

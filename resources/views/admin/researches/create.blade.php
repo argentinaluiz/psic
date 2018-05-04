@@ -13,7 +13,7 @@
 @section('content')
     @include('form._form_errors')
     {{ Form::open(['route' => 'researches.store', 'class' => 'form form-search form-ds', 'files' => true]) }}
-        @include('painel.researches._form')
+        @include('admin.researches._form')
         <button class="btn btn-primary btn-block" type="submit"><span class="glyphicon glyphicon-floppy-disk"></span>&nbsp;&nbsp;Adicionar</button>
     {{ Form::close() }}
     
