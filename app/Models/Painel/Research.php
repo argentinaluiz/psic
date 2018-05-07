@@ -8,7 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Research extends Model
 {
     protected $fillable = [
-        'category_id',
         'title',
         'image',
         'description',
@@ -61,10 +60,6 @@ class Research extends Model
       return $categories->intersect($researchCategories)->count();
     }
 
-    public function users()
-    {
-        return $this->belongsToMany(\App\User::class);
-    }
 
     public function documents()
     {

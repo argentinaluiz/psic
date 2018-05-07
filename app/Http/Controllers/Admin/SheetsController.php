@@ -11,11 +11,7 @@ use App\Http\Controllers\Controller;
 
 class SheetsController extends Controller
 {
-     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
         if(Gate::denies('sheets-view')){

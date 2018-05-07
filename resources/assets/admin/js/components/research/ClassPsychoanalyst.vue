@@ -70,7 +70,7 @@
                     }).then(() => {
                         new PNotify({
                             title: 'Aviso',
-                            text: 'Paciente adicionado com sucesso!',
+                            text: 'Psicanalista adicionado com sucesso!',
                             styling: 'brighttheme',
                             type: 'success'
                         });
@@ -79,14 +79,14 @@
             },
             methods: {
                 destroy(psychoanalyst){
-                    if(confirm('Deseja remover este paciente?')){
+                    if(confirm('Deseja remover este psicanalista?')){
                         store.dispatch('classPsychoanalyst/destroy', {
                             psychoanalystId: psychoanalyst.id,
                             researchId: this.research
                         }).then(() => {
                         new PNotify({
                             title: 'Aviso',
-                            text: 'Paciente deletado com sucesso!',
+                            text: 'Psicanalista deletado com sucesso!',
                             styling: 'brighttheme',
                             type: 'success'
                         });

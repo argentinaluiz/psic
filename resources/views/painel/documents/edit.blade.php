@@ -28,7 +28,7 @@
 				 <div class="form-group">
 					<div class="btn">
 						<span>Atualizar documento</span>
-						<input type="file" multiple name="files[]">
+						<input type="file" name="file">
 					</div>
 					<div class="file-path-wrapper">
 						<input class="file-path validate" type="text">

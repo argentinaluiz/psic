@@ -34,6 +34,7 @@
 		<tr>
 			<th>Id</th>
 			<th>Título</th>
+			<th>Descrição</th>
 			<th>Documento</th>
 			<th>Ações</th>
 		</tr>
@@ -43,6 +44,7 @@
 				<tr>
 					<td>{{ $registro->id }}</td>
 					<td>{{ $registro->title }}</td>
+					<td>{{ $registro->description }}</td>
 					<td>{{ $registro-> Url() }}</td>
 					<td>
 						<form action="{{route('documents.destroy',$registro->id)}}" method="post">

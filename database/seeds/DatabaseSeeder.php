@@ -29,6 +29,10 @@ class DatabaseSeeder extends Seeder
         $this->call(ListChoicesTableSeeder::class);
         $this->call(TypeChoicesTableSeeder::class);
         $this->call(ResearchesTableSeeder::class);
+        $this->call(RanksTableSeeder::class);
+        $this->call(SubRanksTableSeeder::class);
+        $this->call(SubSubRanksTableSeeder::class);
+        $this->call(ToolsTableSeeder::class);
 
         DB::statement('SET FOREIGN_KEY_CHECKS=1;');
     }

@@ -179,8 +179,6 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['aut
   
     Route::resource('permissions', 'PermissionController');
 
-    
-
     Route::get('researches/category/{id}', ['as'=>'researches.category','uses'=>'ResearchesController@category']);
     Route::post('researches/category/{category}', ['as'=>'category.store','uses'=>'ResearchesController@categoryStore']);
     Route::delete('researches/category/{research}/{category}', ['as'=>'category.destroy','uses'=>'ResearchesController@categoryDestroy']);  
@@ -219,6 +217,26 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['aut
     Route::resource('type_choices', 'TypeChoicesController');
     Route::resource('list_choices', 'ListChoicesController');
 
+    Route::get('tools/toolkit/{tool}', ['as'=>'tools.toolkit','uses'=>'ToolsController@indexToolkit']);
+    Route::get('tools/toolkit/create/{tool}', ['as'=>'tools.toolkit.create','uses'=>'ToolsController@createToolkit']);
+    Route::post('tools/toolkit/store', ['as'=>'tools.toolkit.store','uses'=>'ToolsController@storeToolkit']);
+    Route::delete('tools/toolkit/remove', ['as'=>'tools.toolkit.remove','uses'=>'ToolsController@removeToolkit']);
+  
+    Route::get('tools/toolkit/edit/{toolkit}', ['as'=>'tools.toolkit.edit','uses'=>'ToolsController@editToolkit']);
+    Route::put('tools/toolkit/update/{toolkit}', ['as'=>'tools.toolkit.update','uses'=>'ToolsController@updateToolkit']);
+    Route::delete('tools/toolkit/delete/{toolkit}', ['as'=>'tools.toolkit.delete','uses'=>'ToolsController@deleteToolkit']);
+    
+    Route::group(['prefix' => 'tools/{tool}', 'as' => 'tools.'],
+    function (){
+        Route::resource('psychoanalysts', 'ClassToolsController', ['only' => ['index', 'store', 'destroy']]);
+        Route::resource('toolkits', 'ClassToolkitsController', ['only' => ['index','store','destroy']]);
+    });
+
+    Route::resource('tools', 'ToolsController');
+    Route::resource('ranks', 'RanksController');
+    Route::resource('sub_ranks', 'SubRanksController');
+    Route::resource('sub_sub_ranks', 'SubSubRanksController');
+
   });
 
 Route::prefix('admin')->group(function () {
@@ -235,5 +253,9 @@ Route::prefix('admin')->group(function () {
         Route::name('sheets.index')->get('sheets', 'SheetsController@index');
         Route::name('sub_sheets.index')->get('sub_sheets', 'SubSheetsController@index');
         Route::name('list_choices.index')->get('list_choices', 'ListChoicesController@index');
+        Route::name('tools.index')->get('ranks', 'ToolsController@index');
+        Route::name('ranks.index')->get('ranks', 'RanksController@index');
+        Route::name('sub_ranks.index')->get('sub_ranks', 'SubRanksController@index');
+        Route::name('sub_sub_ranks.index')->get('sub_sub_ranks', 'SubSubRanksController@index');
     });
 });

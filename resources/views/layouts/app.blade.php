@@ -105,15 +105,10 @@
 					<li>
 						<a href=""><i class="fa fa-comments-o"></i> <span class="nav-label">Recursos</span><span class="fa arrow"></span></a>
 						<ul class="nav nav-second-level collapse">
-							<li><a href=""> Contos </a></li>
-							<li><a href=""> Dinâmicas</a></li>
-							<li><a href=""> Frases</a></li>
-							<li><a href=""> Vídeos </a></li>
-							<li><a href=""> Literatura Indicada </a></li>
-							<li><a href=""> Artigos </a></li>
-							<li><a href=""> Metáforas </a></li>
-							<li><a href=""> Músicas </a></li>
-							<li><a href=""> Jogos </a></li>
+							<li><a href="{{ route('tools.index') }}"> Recursos </a></li>
+							<li><a href="{{ route('ranks.index') }}"> Categorias</a></li>
+							<li><a href="{{ route('sub_ranks.index') }}"> Subcategorias</a></li>
+							<li><a href="{{ route('sub_sub_ranks.index') }}"> Sub_Subcategorias</a></li>
 						</ul>
 					</li>
 
