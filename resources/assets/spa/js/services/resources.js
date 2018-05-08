@@ -46,7 +46,8 @@ export class Jwt{
 const Psychoanalyst = {
     classInformation: Vue.resource('psychoanalyst/class_informations/{class_information}'),
     classMeeting: Vue.resource('psychoanalyst/class_meetings/{class_meeting}'),
-    classTest: Vue.resource('psychoanalyst/class_meetings/{class_meeting}/class_tests/{class_test}')
+    classTest: Vue.resource('psychoanalyst/class_meetings/{class_meeting}/class_tests/{class_test}'),
+    research: Vue.resource('psychoanalyst/researches/{research}')
 };
 /*Quando quisermos fazer uma requisição, poderemos importar a constante Psychoanalyst e acessar a rota das seguintes formas:
 Psychoanalyst.classInformation.query() ou Psychoanalyst.classInformation.get()*/

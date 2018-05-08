@@ -9,7 +9,8 @@
         data(){
             return {
                 menus:[
-                    {name: "Minhas categorias", routeName: 'psych.class_meetings.list' }
+                    {name: "Categorias", routeName: 'psych.class_meetings.list' },
+                    {name: "Pesquisas", routeName: 'psych.researches.list' }
                 ],
                 brandRouteName: 'psych.class_meetings.list'
             }

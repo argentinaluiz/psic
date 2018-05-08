@@ -56,6 +56,14 @@ export default [
                     auth: true
                 }
             },
+            {
+                name: 'psych.researches.list',
+                path: 'researches',
+                component: require('./components/psych/PsychResearchList.vue'),
+                meta: {
+                    auth: true
+                }
+            },
         ]
     },
     {
