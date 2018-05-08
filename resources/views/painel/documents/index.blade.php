@@ -35,7 +35,7 @@
 			<th>Id</th>
 			<th>Título</th>
 			<th>Descrição</th>
-			<th>Documento</th>
+			<th>URL</th>
 			<th>Ações</th>
 		</tr>
 		</thead>

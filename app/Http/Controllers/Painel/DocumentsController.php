@@ -68,9 +68,27 @@ class DocumentsController extends Controller
     }
 
 
-    public function update(Request $request, Document $document)
+    public function update(Request $request, $id)
     {
-        //
+        if(Gate::denies('documents-edit')){
+            abort(403,"Não autorizado!");
+          }
+  
+          $registro = Document::find($id);
+          if(!$registro) return redirect()->back();
+         
+          if($request->hasFile('file')){
+            $file = $request->file('file');
+            Storage::put($file->getClientOriginalName(), file_get_contents($file));
+                $auxNome = explode(".",$file->getClientOriginalName());
+
+                $documentModel = $registro->folders()->get()->first();              
+                $documentModel->update(["url"=>$file->getClientOriginalName(), file_get_contents($file)]);
+          };
+
+          $registro->update($request->all());
+          return redirect()->route('documents.index')
+          ->with('message', 'Documento atualizado com sucesso!');
     }
 
   
