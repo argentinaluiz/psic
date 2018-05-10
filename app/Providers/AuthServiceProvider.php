@@ -10,6 +10,7 @@ use App\Models\Painel\Call;
 use App\Models\Painel\Permission;
 use App\Models\Painel\Admin;
 use App\Models\Painel\Psychoanalyst;
+use App\Models\Painel\Patient;
 
 
 class AuthServiceProvider extends ServiceProvider
