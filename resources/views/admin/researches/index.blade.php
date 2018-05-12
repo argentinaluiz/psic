@@ -24,6 +24,7 @@
 			<th>Imagem</th>
             <th>Título</th>
 			<th>Ano</th>
+			<th>Tags</th>
 			<th>Descrição</th>
 			<th>Categorias</th>
 			<th>Ativo?</th>
@@ -39,6 +40,7 @@
 					</td>
                     <td>{{ $research->title }}</td>
 					<td>{{ $research->year }}</td>
+					<td>{{ $research->tag }}</td>
 					<td>{{ $research->description }}</td>
 					<td>{{ $research->TextCategories }}</td>
 					<td>{{ $research->active?'Sim': 'Não'}}</td>

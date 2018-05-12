@@ -9,6 +9,11 @@
     {{ Form::text('title',null,['class' => 'form-control']) }}
 @endcomponent
 
+@component('form._form_group',['field' => 'tag'])
+    {{ Form::label('tag','Tag',['class' => 'control-label']) }}
+    {{ Form::text('tag',null,['class' => 'form-control']) }}
+@endcomponent
+
 @component('form._form_group',['field' => 'year'])
     {{ Form::label('year','Ano',['class' => 'control-label']) }}
     {{ Form::text('year',null,['class' => 'form-control']) }}

@@ -26,6 +26,11 @@ class ResearchForm extends Form
                 'rules' => 'integer'
             ])
 
+            ->add('tag', 'text', [
+                'label' => 'Tag',
+                'rules' => 'required|min:3|max:15'
+            ])
+
             ->add('description', 'textarea', [
                 'label' => 'Descrição',
                 'rules' => 'min:3|max:1000'

@@ -10,6 +10,7 @@ class Research extends Model
     protected $fillable = [
         'title',
         'image',
+        'tag',
         'description',
         'year',
         'active'

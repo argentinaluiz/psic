@@ -17,6 +17,7 @@ class CreateResearchesTable extends Migration
             $table->increments('id');
             $table->string('title');
             $table->string('image', 200)->nullable();
+            $table->string('tag');
             $table->string('description');
             $table->integer('year')->nullable();
             $table->boolean('active')->nullable(); 

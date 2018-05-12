@@ -7,47 +7,52 @@
                 <li><a href="http://localhost:8000/home">Listar pesquisas</a></li>
             </ol>
         </div>
-        <div class="wrapper wrapper-content  animated fadeInRight">
+		
+		<div class="wrapper wrapper-content">
             <div class="row">
-                <div class="col-sm-12">
-                    <div class="ibox float-e-margins">
-                        <div class="ibox-title">
-                            <h5>Listagem de pesquisas</h5>
-                            <div class="ibox-tools">
-                                <a class="collapse-link">
-                                    <i class="fa fa-chevron-up"></i>
-                                </a>
-                                <a class="close-link">
-                                    <i class="fa fa-times"></i>
-                                </a>
-                            </div>
-                        </div>
-                        <div  class="ibox-content">  
-							 <div class="row">
-								<div class="col-md-12"> 
-									<table class="table table-striped">
-										<thead>
-										<tr>
-											<th>Título</th>
-											<th>Imagem</th>
-                                            <th>Descrição</th>
-											<th>Ano</th>
-										</tr>
-										</thead>
-										<tbody>
-										 <tr v-for="research in researches">
-                                            <td>{{research.title }}</td>
-											<td>{{research.image }}</td>
-											<td>{{research.description }}</td>
-											<td>{{research.year }}</td>
-										</tr>
-										</tbody>
-									</table>
-								</div> 
-							</div> 
-                        </div>
-                    </div>
-                </div>
+                <div class="col-lg-3">
+					<div class="ibox float-e-margins">
+						<div class="ibox-content">
+							<div class="file-manager">
+								<h5>Show:</h5>
+								<a href="#" class="file-control active">Todos</a>
+								<a href="#" class="file-control">Documentos</a>
+								<a href="#" class="file-control">Audios</a>
+								<div class="hr-line-dashed"></div>
+								
+								<h5 class="tag-title">Tags</h5>
+								<ul class="tag-list" style="padding: 0" v-for="research in researches">
+									<li><a href="">{{ research.tag }}</a></li>
+								</ul>
+								<div class="clearfix"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+                <div class="col-lg-9 animated fadeInRight">
+					<div class="row">
+						<div class="col-lg-12">
+							<div class="file-box" v-for="research in researches">
+								<div class="file">
+									<a href="#">
+										<span class="corner"></span>
+
+										<div class="image">
+                                            <img class="img-responsive" src="" alt="" style="max-width: 50px;">
+											{{ research.image }}
+										</div>
+										<div class="file-name">
+											{{ research.title }}
+											{{ research.description }}
+											<br/>
+											<small>{{ research.year }}</small>
+										</div>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
             </div>
         </div>
     </div>
