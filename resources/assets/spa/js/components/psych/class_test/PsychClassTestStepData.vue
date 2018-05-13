@@ -79,10 +79,6 @@
             classTest(){
                 return this.$deepModel('psych.classTest.classTest');
             },
-            classTests() {
-                return store.state.psych.classTest.classTests;
-            },
-
         },
         mounted() {
             let classMeetingId = this.$route.params.class_meeting;
