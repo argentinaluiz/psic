@@ -257,6 +257,5 @@ Route::prefix('admin')->group(function () {
         Route::name('ranks.index')->get('ranks', 'RanksController@index');
         Route::name('sub_ranks.index')->get('sub_ranks', 'SubRanksController@index');
         Route::name('sub_sub_ranks.index')->get('sub_sub_ranks', 'SubSubRanksController@index');
-        Route::name('question_type.index')->get('question_type', 'ClassTestsController@index');
     });
 });
