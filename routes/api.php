@@ -35,6 +35,7 @@ Route::group([
             Route::resource('class_informations', 'ClassInformationsController', ['only' => ['index', 'show']]);
             Route::resource('class_meetings', 'ClassMeetingsController', ['only' => ['index', 'show']]);
             Route::resource('researches', 'ResearchesController', ['only' => ['index', 'show']]);
+            Route::resource('tools', 'ToolsController', ['only' => ['index', 'show']]);
         });
         Route::group([
             'prefix' => 'patient', 

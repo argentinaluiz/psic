@@ -22,7 +22,7 @@ const actions = {
             });
     },
     get(context, researchId){
-        Psychoanalyst.research.get({class_information: researchId})
+        Psychoanalyst.research.get({research: researchId})
             .then(response => {
                 context.commit('setResearch', response.data);
             });
