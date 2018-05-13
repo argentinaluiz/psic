@@ -38,9 +38,9 @@
                         <span class="glyphicon glyphicon-trash"></span> Excluir
                     </button>
                 </td>
-                <td>{{toolkit.rank.name}}</td>
-                <td>{{toolkit.sub_rank.name}}</td>
-                <td>{{toolkit.sub_sub_rank.name}}</td>
+                <td>{{ toolkit.rank.name}}</td>
+                <td>{{ toolkit.sub_rank.name}}</td>
+                <td>{{ toolkit.sub_sub_rank.name }}</td>
             </tr>
             </tbody>
         </table>

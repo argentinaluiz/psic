@@ -13,7 +13,7 @@ class ClassToolsController extends Controller
     public function index(Request $request, Tool $tool)
     {
         if(!$request->ajax()) {
-            return view('admin.tools.class_tool', compact('tool'));
+            return view('admin.tools.class_psychoanalyst', compact('tool'));
         }else{
             return $tool->psychoanalysts()->get();
         }

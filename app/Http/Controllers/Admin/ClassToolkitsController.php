@@ -16,7 +16,7 @@ class ClassToolkitsController extends Controller
         if(!$request->ajax()) {
             return view('admin.tools.class_toolkit', compact('tool'));
         }else{
-            return $tool->toolkits()->get();
+            return $tool->toolkits()->whereNotNull('sub_sub_rank_id')->get();
         }
     }
 

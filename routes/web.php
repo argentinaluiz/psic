@@ -253,9 +253,10 @@ Route::prefix('admin')->group(function () {
         Route::name('sheets.index')->get('sheets', 'SheetsController@index');
         Route::name('sub_sheets.index')->get('sub_sheets', 'SubSheetsController@index');
         Route::name('list_choices.index')->get('list_choices', 'ListChoicesController@index');
-        Route::name('tools.index')->get('ranks', 'ToolsController@index');
+        Route::name('tools.index')->get('tools', 'ToolsController@index');
         Route::name('ranks.index')->get('ranks', 'RanksController@index');
         Route::name('sub_ranks.index')->get('sub_ranks', 'SubRanksController@index');
         Route::name('sub_sub_ranks.index')->get('sub_sub_ranks', 'SubSubRanksController@index');
+        Route::name('question_type.index')->get('question_type', 'ClassTestsController@index');
     });
 });
