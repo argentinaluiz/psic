@@ -44,9 +44,9 @@
                                 <div class="form-group">
 									<label for="question_type" class="col-sm-2 control-label">Questão</label>
 									<div class="col-sm-3">
-                                        <select class="form-control" name="question_type" v-model="classTest.question_type">
+                                        <select class="form-control" name="question_type" v-model="classTest.selected">
                                             <option value="" selected disabled>Selecione um tipo de questão</option>
-                                            <option v-for="classTest in classTests" v-bind:value="classTest.value">{{classTest.question_type.text}}</option>
+                                            <option v-for="question_type in classTest.question_type" v-bind:value="question_type.value">{{question_type.text}}</option>
                                         </select>
                                     </div>
 								</div>
