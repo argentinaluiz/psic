@@ -15,6 +15,11 @@ class Psychoanalyst extends Model
         return $this->belongsToMany(Research::class);//quando estou trabalhando com uma tabela pivot, o método correto é o belongsToMany
     }
 
+    public function tools()
+    {
+        return $this->belongsToMany(Tool::class);//quando estou trabalhando com uma tabela pivot, o método correto é o belongsToMany
+    }
+
     public function toArray() 
     {
         $data = parent::toArray();

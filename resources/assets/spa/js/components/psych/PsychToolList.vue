@@ -23,7 +23,7 @@
                             </div>
                         </div>
                         <div  class="ibox-content">  
-							<div class="panel-body" v-for="tool in tools">
+							<div class="panel-body">
                                 <div class="panel-group" id="accordion"> <!-- Aqui vai a categoria-->
                                     <div class="panel panel-default" >
                                         <div class="panel-heading">
@@ -65,24 +65,24 @@
 													</div>
 												</div>
                                                 -->
-                                               <div class="file-box">
-													<div class="file">
-														<a href="#">
-															<span class="corner"></span>
+                                                <div class="file-box" v-for="tool in tools">
+                                                    <div class="file">
+                                                        <a href="#">
+                                                            <span class="corner"></span>
 
-															<div class="image">
-																<img class="img-responsive" src="" alt="" style="max-width: 50px;">
-																{{ tool.image }}
-															</div>
-															<div class="file-name">
-																{{ tool.title }}
-																{{ tool.description }}
-																<br/>
-																<small>{{ tool.year }}</small>
-															</div>
-														</a>
-													</div>
-												</div>
+                                                            <div class="image">
+                                                                <img class="img-responsive" src="" alt="" style="max-width: 50px;">
+                                                                {{ tool.image }}
+                                                            </div>
+                                                            <div class="file-name">
+                                                                {{ tool.title }}
+                                                                {{ tool.description }}
+                                                                <br/>
+                                                                <small>{{ tool.year }}</small>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
