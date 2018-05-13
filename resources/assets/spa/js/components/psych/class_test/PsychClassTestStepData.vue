@@ -48,6 +48,8 @@
                                             <option value="" selected disabled>Selecione um tipo de questão</option>
                                             <option v-for="question_type in classTest.question_type" v-bind:value="question_type.value">{{question_type.text}}</option>
                                         </select>
+                                        <br>
+                                        <p>Tipo de questão: {{ classTest.selected }}</p>
                                     </div>
 								</div>
 								<div class="form-group">

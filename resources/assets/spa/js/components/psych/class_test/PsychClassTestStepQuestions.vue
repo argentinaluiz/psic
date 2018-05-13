@@ -26,7 +26,7 @@
                         </div>
                         <div  class="ibox-content">  
 							<div class="alert alert-warning">
-                                {{classTest.name}} | {{classTest.date_start}} à {{classTest.date_end}} | {{classTest.question_type}}
+                                {{classTest.name}} | {{classTest.date_start}} à {{classTest.date_end}} | {{ classTest.selected }}
                             </div>
 
                             <div class="row">
@@ -38,7 +38,7 @@
                             </div>
                             
                             <div class="row">
-                                <template v-if="1">
+                                <template v-if="classTest.selected == 1">
                                     <div class="col-md-6">
                                         <psych-class-test-question-form></psych-class-test-question-form>
                                     </div>
@@ -46,7 +46,7 @@
                                         <psych-class-test-question-list></psych-class-test-question-list>
                                     </div>
                                 </template>
-                                <template v-if="2">
+                                <template v-if="classTest.selected == 2">
                                     <div class="col-md-6">
                                         <psych-class-test-question-multiple-form></psych-class-test-question-multiple-form>
                                     </div>
@@ -54,7 +54,7 @@
                                         <psych-class-test-question-multiple-list></psych-class-test-question-multiple-list>
                                     </div>
                                 </template>
-                                <template v-if="3">
+                                <template v-if="classTest.selected == 3">
                                     <div class="col-md-6">
                                         <psych-class-test-question-discursive-form></psych-class-test-question-discursive-form>
                                     </div>
