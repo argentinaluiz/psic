@@ -27,6 +27,7 @@ const state = {
         name: '',
         date_start: '',
         date_end: '',
+        selected:1,
         question_type: [
             {value: "1", text:"Uma escolha"},
             {value: "2", text:"Várias escolhas"},
