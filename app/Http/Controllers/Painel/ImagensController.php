@@ -87,7 +87,7 @@ class ImagensController extends Controller
             $image3 = Image::make("media/img/products/".$imagem_nome)->fit($tamS[0],$tamS[1])->save("media/img/products/slide-".$imagem_nome);
 
             $auxNome = explode(".",$imagem->getClientOriginalName());
-            $imagemModel = Imagem::create(["title"=>$auxNome[0],"description"=>""]);
+            $imagemModel = Imagem::create(["title"=>$auxNome[0],"description"=>$request['description']]);
             $imagemModel->files()->create(["url"=>"media/img/products/pequena-".$imagem_nome,"size"=>"P"]);
             $imagemModel->files()->create(["url"=>"media/img/products/galeria-".$imagem_nome,"size"=>"G"]);
             $imagemModel->files()->create(["url"=>"media/img/products/slide-".$imagem_nome,"size"=>"S"]);

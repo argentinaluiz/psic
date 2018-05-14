@@ -47,7 +47,7 @@ class DocumentsController extends Controller
                     $data = $request->all();
                     $auxNome = explode(".",$file->getClientOriginalName());
                     $documentModel = Document::create(["title"=>$auxNome[0],"description"=>""]);
-                    $documentModel->folders()->create(["url"=>$file->getClientOriginalName(), file_get_contents($file)]);
+                    $documentModel->folders()->create(["url"=>"storage/".$file->getClientOriginalName(), file_get_contents($file)]);
                 endforeach;
             endif;
             return redirect()->route('documents.index')
@@ -83,7 +83,7 @@ class DocumentsController extends Controller
                 $auxNome = explode(".",$file->getClientOriginalName());
 
                 $documentModel = $registro->folders()->get()->first();              
-                $documentModel->update(["url"=>$file->getClientOriginalName(), file_get_contents($file)]);
+                $documentModel->update(["url"=>"storage/".$file->getClientOriginalName(), file_get_contents($file)]);
           };
 
           $registro->update($request->all());
