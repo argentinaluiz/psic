@@ -57,11 +57,6 @@ const mutations = {
     setName(state,name){
         state.classTest.name = name;
     },
-    getQuestionTypeText(state,text){
-        var values = this.question_type.map(function(obj) { return obj.value})
-        var index = values.indexOf(this.selected)
-        this.question_typeText = this.question_type[index].text
-    },
     addQuestion(state){
         if(typeof state.question.id =="undefined"){
             state.classTest.questions.push(state.question);
