@@ -31,6 +31,7 @@ h5 {margin-top: 5px;font-weight: 600;}
 .cleaner_h25 {clear: both; width:100%; height: 25px;}
 .cleaner_h30 {clear: both; width:100%; height: 30px;}
 .cleaner_h40 {clear: both; width:100%; height: 40px;}
+.cut{width:140px;text-overflow:ellipsis;white-space:nowrap;overflow:hidden;}
 .nav > li > a {color: #a7b1c2;font-weight: 600;padding: 14px 20px 14px 25px;}
 .nav.navbar-right > li > a {color: #999c9e;}
 .nav > li.active > a {color: #fff;}

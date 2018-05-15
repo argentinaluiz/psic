@@ -14,9 +14,9 @@
 					<div class="ibox float-e-margins">
 						<div class="ibox-content">
 							<div class="file-manager">
-								<h5>Show:</h5>
-								<a href="#" class="file-control active">Todos</a>
-								<a href="#" class="file-control">Documentos</a>
+								<h5>Categorias</h5>
+								<a  href="#" class="file-control active">Todos</a>
+								<a href="#" class="file-control" >Documentos</a>
 								<a href="#" class="file-control">Audios</a>
 								<div class="hr-line-dashed"></div>
 								
@@ -36,15 +36,14 @@
 								<div class="file">
 									<a href="#">
 										<span class="corner"></span>
-
+										
 										<div class="image">
-                                            <img class="img-responsive" src="" alt="" style="max-width: 50px;">
-											{{ research.image }}
+                                            <img class="img-responsive" :src="`/storage/research/${research.image}`" alt="">
 										</div>
 										<div class="file-name">
 											{{ research.title }}
-											{{ research.description }}
 											<br/>
+											<p class="cut">{{ research.description }}</p>
 											<small>{{ research.year }}</small>
 										</div>
 									</a>
@@ -65,10 +64,10 @@
         computed: {
             researches() {
                 return store.state.psych.research.researches;
-            }
+			}
         },
         mounted() {
-            store.dispatch('psych/research/query'); 
+			store.dispatch('psych/research/query');
         }
     }
 </script>
