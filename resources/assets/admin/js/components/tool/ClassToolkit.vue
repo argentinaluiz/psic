@@ -40,7 +40,11 @@
                 </td>
                 <td>{{ toolkit.rank.name}}</td>
                 <td>{{ toolkit.sub_rank.name}}</td>
-                <td>{{ toolkit.sub_sub_rank.name }}</td>
+                <td>
+                    <div v-if="toolkit.sub_sub_rank">
+                        {{  toolkit.sub_sub_rank.name  }} 
+                    </div>
+                </td>
             </tr>
             </tbody>
         </table>
@@ -57,6 +61,9 @@
         computed: {
             toolkits(){
                 return store.state.classToolkit.toolkits;
+            },
+            subSubRankName(){
+                return !store.state.classToolkit.toolkits.sub_sub_rank ? '': store.state.classToolkit.toolkits.sub_sub_rank.name;
             }
         },
         mounted(){
