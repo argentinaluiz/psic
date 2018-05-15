@@ -71,13 +71,11 @@
                                                             <span class="corner"></span>
 
                                                             <div class="image">
-                                                                <img class="img-responsive" src="" alt="" style="max-width: 50px;">
-                                                                {{ tool.image }}
+                                                                <img class="img-responsive" :src="`/storage/tool/${tool.image}`" alt="">
                                                             </div>
                                                             <div class="file-name">
-                                                                {{ tool.title }}
-                                                                {{ tool.description }}
-                                                                <br/>
+                                                                <h5>{{ tool.title }}</h5>
+                                                                <p class="cut">{{ tool.description }}</p>
                                                                 <small>{{ tool.year }}</small>
                                                             </div>
                                                         </a>

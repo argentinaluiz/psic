@@ -41,8 +41,7 @@
                                             <img class="img-responsive" :src="`/storage/research/${research.image}`" alt="">
 										</div>
 										<div class="file-name">
-											{{ research.title }}
-											<br/>
+											<h5>{{ research.title }}</h5>
 											<p class="cut">{{ research.description }}</p>
 											<small>{{ research.year }}</small>
 										</div>

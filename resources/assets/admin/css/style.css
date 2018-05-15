@@ -1550,6 +1550,7 @@ ul.notes li div {text-decoration: none;color: #000;background: #ffc;display: blo
 .file-control.active {text-decoration: underline;}
 .file .icon i {font-size: 70px;color: #dadada;}
 .file .file-name {padding: 10px;background-color: #f8f8f8;border-top: 1px solid #e7eaec;}
+.file .file-name h5{text-transform: uppercase;}
 .file-name small {color: #676a6c;}
 .corner {position: absolute;display: inline-block;width: 0;height: 0;line-height: 0;border: 0.6em solid transparent;border-right: 0.6em solid #f1f1f1;border-bottom: 0.6em solid #f1f1f1;right: 0em;bottom: 0em;}
 a.compose-mail {padding: 8px 10px;}
