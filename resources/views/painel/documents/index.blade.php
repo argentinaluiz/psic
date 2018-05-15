@@ -45,7 +45,9 @@
 					<td>{{ $registro->id }}</td>
 					<td>{{ $registro->title }}</td>
 					<td>{{ $registro->description }}</td>
-					<td><img width="50" src="{{$registro->Url()}}" alt="{{$registro->title}}"></td>
+					<td>{{ $registro->Url() }}
+						<!-- <img width="50" src="{{$registro->Url()}}" alt="{{$registro->title}}"> -->
+					</td>
 					<td>
 						<form action="{{route('documents.destroy',$registro->id)}}" method="post">
 							@can('documents-edit')
