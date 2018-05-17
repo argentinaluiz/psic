@@ -24,6 +24,14 @@ Vue.filter('dateTimeBr', function (value) { //0000-00-00
     return value;
 });
 
+Vue.filter('truncate', function (str, length) { 
+    var output = str;
+    if (output.length > length) {
+        output = str.substring(0, length) + '...';
+    }
+    return output;
+});
+
 Vue.filter('classInformationAlias', function(classInformation){
     return `${classInformation.name}.${classInformation.semester}.${classInformation.year}`;
 })
