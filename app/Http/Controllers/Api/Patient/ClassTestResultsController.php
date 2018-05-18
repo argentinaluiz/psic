@@ -15,10 +15,10 @@ class ClassTestResultsController extends Controller
             'patient_class_tests.created_at',
             "(patient_class_tests.point/$sumClassTestPoints)*100 as percentage"
         ];
-        
        // dd($selects);
-        var_dump($selects);
-        die();
+        //var_dump($selects);
+       // die();
+       //dd(\Auth::user());
         //permite que vc crie a query mais próxima do banco de dados
         $results = \DB::table('patient_class_tests')
         ->selectRaw(implode(',', $selects))
@@ -26,11 +26,13 @@ class ClassTestResultsController extends Controller
         //->join('class_meetings','class_meetings.id','=','class_tests.class_meeting_id')
         //->join('subjects','subjects.id','=','class_meetings.subject_id')
         ->where('patient_id', \Auth::user()->userable->id)
+       // ->where('patient_id', 3)
         ->where('class_tests.class_meeting_id','class_meeting_id')
         // ->where('patient_id', 15)
         // ->where('class_tests.class_meeting_id',245)
         ->orderBy('patient_class_tests.created_at', 'asc')
         ->get();
+        //->toSql();
         $results->map(function ($item) { //\stdClass
             $item->created_at = (new Carbon($item->created_at))->format(Carbon::ISO8601);
             return $item;
