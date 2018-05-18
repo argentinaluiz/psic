@@ -1,10 +1,10 @@
 <template>
     <div>
         <div class="row wrapper border-bottom white-bg page-heading">
-            <h2>Dashboard</h2> 
+            <h2>Geral</h2> 
             <ol class="breadcrumb">
-                <li><a href="/">Home</a></li>
-                <li><a href="http://localhost:8000/home">Listar pesquisas</a></li>
+                <li><router-link :to="{ name: 'psych.dashboard' }" >Home</router-link></li>
+                <li class="active">Listar pesquisas</li>
             </ol>
         </div>
 		
@@ -14,10 +14,10 @@
 					<div class="ibox float-e-margins">
 						<div class="ibox-content">
 							<div class="file-manager">
-								<h5>Categorias</h5>
-								<a  href="#" class="file-control active">Todos</a>
-								<a href="#" class="file-control" >Documentos</a>
-								<a href="#" class="file-control">Audios</a>
+								<template>
+									<psych-category-list></psych-category-list>
+								</template>
+								<div class="clearfix"></div>
 								<div class="hr-line-dashed"></div>
 								
 								<h5 class="tag-title">Tags</h5>
@@ -25,6 +25,7 @@
 									<li><a href="">{{ research.tag }}</a></li>
 								</ul>
 								<div class="clearfix"></div>
+								<div class="hr-line-dashed"></div>
 							</div>
 						</div>
 					</div>
@@ -38,7 +39,7 @@
 										<span class="corner"></span>
 										
 										<div class="image">
-                                            <img class="img-responsive" :src="`/storage/research/${research.image}`" alt="">
+                                            <img class="img-responsive" :src="`/storage/research/${research.image}`" :alt="research.title">
 										</div>
 										<div class="file-name">
 											<h5>{{ research.title }}</h5>
@@ -57,9 +58,13 @@
 </template>
 
 <script type="text/javascript">
-    import store from '../../store/store';
+	import store from '../../store/store';
+	import PsychCategoryListComponent from './PsychCategoryList.vue';
 
     export default {
+		components:{
+            'psych-category-list' : PsychCategoryListComponent
+        },
         computed: {
             researches() {
                 return store.state.psych.research.researches;

@@ -4,7 +4,8 @@
             <h2>Dashboard</h2> 
             <ol class="breadcrumb">
                 <li><a href="/">Home</a></li>
-                <li><a href="http://localhost:8000/home">Listar classes</a></li>
+                <li><router-link :to="{ name: 'patient.class_informations.list' }" >Listar classes</router-link></li>
+                <li class="active"><a href="">Listar sessões</a></li>
             </ol>
         </div>
         <div class="wrapper wrapper-content  animated fadeInRight">
@@ -12,7 +13,7 @@
                 <div class="col-sm-12">
                     <div class="ibox float-e-margins">
                         <div class="ibox-title">
-                            <h5>Escolher um nome de  <small v-if="classInformation">{{classInformation | classInformationAlias}}</small>
+                            <h5>Questões de  <small v-if="classInformation">{{classInformation | classInformationAlias}}</small>
                                  </h5>
                             <div class="ibox-tools">
                                 <a class="collapse-link">
@@ -29,7 +30,7 @@
 									<table class="table table-striped">
 										<thead>
 										<tr>
-											<th>Escolher nome</th>
+											<th>Sessões</th>
                                             <th>Ações</th>
 										</tr>
 										</thead>

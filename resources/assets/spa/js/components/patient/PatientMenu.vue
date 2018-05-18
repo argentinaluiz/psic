@@ -9,7 +9,7 @@
         data(){
             return {
                 menus:[
-                    {name: "Minhas", routeName: 'patient.class_informations.list' }
+                    {name: "Classes", routeName: 'patient.class_informations.list' }
                 ],
                 brandRouteName: 'patient.class_informations.list'
             }

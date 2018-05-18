@@ -50,7 +50,6 @@
             question(){
                 return this.$deepModel('psych.classTest.question')
             }
-
         },
         mounted() {
            

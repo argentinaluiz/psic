@@ -1,11 +1,12 @@
 <template>
     <div>
         <div class="row wrapper border-bottom white-bg page-heading">
-            <h2>Dashboard</h2> 
+            <h2>Dashboard</h2>
             <ol class="breadcrumb">
                 <li><a href="/">Home</a></li>
-                <li><a href="">Listar Classes</a></li>
-                <li><a href="">Questões</a></li>
+                <li><router-link :to="{ name: 'patient.class_informations.list' }" >Listar classes</router-link></li>
+                <li><router-link :to="{ name: 'patient.class_meetings.list' }" >Listar sessões</router-link></li>
+                <li class="active"><a href="">Questões</a></li>
             </ol>
         </div>
         <div class="wrapper wrapper-content  animated fadeInRight">

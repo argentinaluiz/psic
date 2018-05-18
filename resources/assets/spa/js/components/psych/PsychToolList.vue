@@ -1,10 +1,10 @@
 <template>
     <div>
         <div class="row wrapper border-bottom white-bg page-heading">
-            <h2>Dashboard</h2> 
+            <h2>Geral</h2>
             <ol class="breadcrumb">
-                <li><a href="/">Home</a></li>
-                <li><a href="http://localhost:8000/home">Listar recursos</a></li>
+                <li><router-link :to="{ name: 'psych.dashboard' }" >Home</router-link></li>
+                <li class="active">Listar recursos</li>
             </ol>
         </div>
         <div class="wrapper wrapper-content  animated fadeInRight">

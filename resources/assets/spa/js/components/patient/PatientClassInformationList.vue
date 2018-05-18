@@ -4,7 +4,7 @@
             <h2>Dashboard</h2> 
             <ol class="breadcrumb">
                 <li><a href="/">Home</a></li>
-                <li><a href="http://localhost:8000/home">Listar classes</a></li>
+                <li class="active"><a href="">Listar sessões</a></li>
             </ol>
         </div>
         <div class="wrapper wrapper-content  animated fadeInRight">
@@ -41,9 +41,8 @@
                                             <td>{{classInformation | classInformationAlias }}</td>
 											<td>
                                                 <router-link :to="{name: 'patient.class_meetings.list', params: {class_information: classInformation.id} }" class="btn btn-link">
-                                                    EscolherNome
-                                                </router-link>|
-
+                                                    Sessões
+                                                </router-link>
                                             </td>
 										</tr>
 										</tbody>

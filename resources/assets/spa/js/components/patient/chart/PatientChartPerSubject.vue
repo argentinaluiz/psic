@@ -4,7 +4,10 @@
             <h2>Dashboard</h2> 
             <ol class="breadcrumb">
                 <li><a href="/">Home</a></li>
-                <li><a href="">Aproveitamento</a></li>
+                <li><router-link :to="{ name: 'patient.class_informations.list' }" >Listar classes</router-link></li>
+                <li><router-link :to="{ name: 'patient.class_meetings.list' }" >Listar sessões</router-link></li>
+                <li><router-link :to="{ name: 'patient.class_tests.list' }" >Questões</router-link></li>
+                <li class="active"><a href="">Aproveitamento</a></li>
             </ol>
         </div>
         <div class="wrapper wrapper-content  animated fadeInRight">

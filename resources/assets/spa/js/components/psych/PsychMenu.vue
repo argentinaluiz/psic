@@ -9,9 +9,10 @@
         data(){
             return {
                 menus:[
-                    {name: "Categorias", routeName: 'psych.class_meetings.list' },
-                    {name: "Pesquisas", routeName: 'psych.researches.list' },
-                    {name: "Recursos", routeName: 'psych.tools.list' }
+                    { name: "Dashboard", routeName: 'psych.dashboard' },
+                    { name: "Categorias", routeName: 'psych.class_meetings.list' },
+                    { name: "Pesquisas", routeName: 'psych.researches.list' },
+                    { name: "Recursos", routeName: 'psych.tools.list' }
                 ],
                 brandRouteName: 'psych.class_meetings.list'
             }
