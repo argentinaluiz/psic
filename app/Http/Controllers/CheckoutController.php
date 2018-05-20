@@ -51,7 +51,7 @@ class CheckoutController extends Controller
             return $item->model->slug.', '.$item->qty;
         })->values()->toJson();
 
-        $userid = Auth::user()->id;
+        $userid = \Auth::user()->userable->id;
             $UserProfile = new UserProfile;
             $UserProfile->address = $request->address;
             $UserProfile->number = $request->number;
