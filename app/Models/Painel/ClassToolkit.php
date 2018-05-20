@@ -36,6 +36,7 @@ class ClassToolkit extends Model
         return $this->belongsTo(Psychoanalyst::class);
     }
 
+
     public function toArray()
     {
         $data = parent::toArray();

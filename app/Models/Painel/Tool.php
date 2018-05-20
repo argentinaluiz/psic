@@ -20,14 +20,16 @@ class Tool extends Model
       return $this->hasMany(Toolkit::class);
     }
 
-     public function psychoanalysts()
-    {
-        return $this->belongsToMany(Psychoanalyst::class);
-    }
-
     public function toolkits()
     {
         return $this->hasMany(ClassToolkit::class);
+    }
+
+    public function scopeByPsychoanalyst($query, $psychoanalystId)
+    {
+        return $query->whereHas('toolkits', function ($query) use($psychoanalystId){
+            $query->where('psychoanalyst_id', $psychoanalystId);
+        });
     }
 
     public function newTool($request, $nameFile = '')
