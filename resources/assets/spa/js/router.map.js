@@ -64,6 +64,38 @@ export default [
                     auth: true
                 }
             },
+            {
+                name: 'psych.categories.list',
+                path: 'categories',
+                component: require('./components/psych/PsychCategoryList.vue'),
+                meta: {
+                    auth: true
+                }
+            },
+            {
+                name: 'psych.tools.list',
+                path: 'tools',
+                component: require('./components/psych/PsychToolList.vue'),
+                meta: {
+                    auth: true
+                }
+            },
+            {
+                name: 'psych.class_toolkits.list',
+                path: 'class_toolkits',
+                component: require('./components/psych/PsychClassToolkitList.vue'),
+                meta: {
+                    auth: true
+                }
+            },
+            {
+                name: 'psych.dashboard',
+                path: 'dashboard',
+                component: require('./components/psych/PsychDashboard.vue'),
+                meta: {
+                    auth: true
+                }
+            },
         ]
     },
     {

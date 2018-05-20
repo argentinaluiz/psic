@@ -18,13 +18,21 @@ class Research extends Model
 
     public function categories()
     {
-        return $this->belongsToMany(Category::class);
+        return $this->belongsToMany(Category::class, 'category_research', 'category_id', 'research_id');
     }
 
     public function psychoanalysts()
     {
         return $this->belongsToMany(Psychoanalyst::class);
     }
+
+    public function scopeByPsychoanalyst($query, $psychoanalystId)
+    {
+        return $query->whereHas('psychoanalysts', function ($query) use($psychoanalystId){
+            $query->where('psychoanalyst_id', $psychoanalystId);
+        });
+    }
+
 
     public function addCategory($category){
         if (is_string($category)) {
@@ -98,6 +106,5 @@ class Research extends Model
         
         return $this->update($data);
     }
-
 
 }

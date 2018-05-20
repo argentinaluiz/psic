@@ -31,6 +31,8 @@ class Category extends Model implements TableInterface
 
     public function researches()
     {
-      return $this->belongsToMany(Research::class);
+        return $this->belongsToMany('App\Models\Painel\Research', 'category_research', 'category_id', 'research_id');
     }
+
+
 }
