@@ -14,11 +14,12 @@ class ToolsTableSeeder extends Seeder
             ->create()
             ->each(function (\App\Models\Painel\Tool $model) use ($psychoanalysts, $ranks, $sub_ranks, $sub_sub_ranks ){
                 /** @var Illuminate\Support\Collection $psychoanalystCol */
-                $psychoanalystCol = $psychoanalysts->random(10);
-                $model->psychoanalysts()->attach($psychoanalystCol->pluck('id'));
+               // $psychoanalystCol = $psychoanalysts->random(10);
+               // $model->psychoanalysts()->attach($psychoanalystCol->pluck('id'));
 
                 $toolkit = rand(3,9);
 
+                $psychoanalystCol = $psychoanalysts->random($toolkit);
                 $rankCol = $ranks->random($toolkit);
                 $sub_rankCol = $sub_ranks->random($toolkit);
                 $sub_sub_rankCol = $sub_sub_ranks->random($toolkit);
@@ -27,6 +28,7 @@ class ToolsTableSeeder extends Seeder
                         'rank_id' => $rankCol->get($value-1)->id,
                         'sub_rank_id' => $sub_rankCol->get($value-1)->id,
                         'sub_sub_rank_id' => $sub_sub_rankCol->get($value-1)->id,
+                        'psychoanalyst_id' => $psychoanalystCol->get($value-1)->id,
                     ]);
                 }
             });

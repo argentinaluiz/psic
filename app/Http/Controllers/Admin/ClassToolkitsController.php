@@ -25,7 +25,8 @@ class ClassToolkitsController extends Controller
         $toolkit = $tool->toolkits()->create([
             'rank_id' => $request->get('rank_id'),
             'sub_rank_id' => $request->get('sub_rank_id'),
-            'sub_sub_rank_id' => $request->get('sub_sub_rank_id')
+            'sub_sub_rank_id' => $request->get('sub_sub_rank_id'),
+            'psychoanalyst_id' => $request->get('psychoanalyst_id'),
         ]);
         //dd($toolkit);
         return $toolkit;

@@ -43,11 +43,10 @@
 					<td></td>
 					<td>{{ $tool->active?'Sim': 'Não'}}</td>
 					<td>
-						<a class="btn btn-link" href="{{route('tools.toolkits.index',['tool' => $tool->id])}}"><span class="glyphicon glyphicon-tags"></span> Categorias</a> |
-						<a class="btn btn-link" href="{{route('tools.toolkit',['tool' => $tool->id])}}"><span class="glyphicon glyphicon-book"></span> Documentos</a> |
-						<a class="btn btn-link" href="{{route('tools.psychoanalysts.index',['tool' => $tool->id])}}"><span class="glyphicon glyphicon-user"></span> Psicanalistas</a> |
 						<a class="btn btn-link" href="{{route('tools.edit',['tool' => $tool->id])}}"><span class="glyphicon glyphicon-pencil"></span> Editar</a> |
-						<a class="btn btn-link" href="{{route('tools.show',['tool' => $tool->id])}}"><span class="glyphicon glyphicon-folder-open"></span> Ver</a>
+						<a class="btn btn-link" href="{{route('tools.show',['tool' => $tool->id])}}"><span class="glyphicon glyphicon-folder-open"></span> Ver</a> |
+						<a class="btn btn-link" href="{{route('tools.toolkits.index',['tool' => $tool->id])}}"><span class="glyphicon glyphicon-tags"></span> Kits</a> |
+						<a class="btn btn-link" href="{{route('tools.toolkit',['tool' => $tool->id])}}"><span class="glyphicon glyphicon-book"></span> Documentos</a> 
 					</td>
 				</tr>
 			@endforeach

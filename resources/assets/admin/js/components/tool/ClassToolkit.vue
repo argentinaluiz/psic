@@ -1,19 +1,25 @@
 <template>
     <div>
         <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label class="control-label">Selecionar psicanalista</label>
+                    <select class="form-control" name="psychoanalysts"></select>
+                </div>
+            </div>
+            <div class="col-md-3">
                 <div class="form-group">
                     <label class="control-label">Selecionar categoria</label>
                     <select class="form-control" name="ranks"></select>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-3">
                 <div class="form-group">
                     <label class="control-label">Selecionar subcategoria</label>
                     <select class="form-control" name="sub_ranks"></select>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-3">
                 <div class="form-group">
                     <label class="control-label">Selecionar sub_subcategoria</label>
                     <select class="form-control" name="sub_sub_ranks"></select>
@@ -26,9 +32,10 @@
             <thead>
             <tr>
                 <th></th>
+                <th>Psicanalista</th>
                 <th>Categoria</th>
                 <th>Subcategoria</th>
-                <th>Sub_Subcategroia</th>
+                <th>Sub_Subcategoria</th>
             </tr>
             </thead>
             <tbody>
@@ -38,6 +45,7 @@
                         <span class="glyphicon glyphicon-trash"></span> Excluir
                     </button>
                 </td>
+                <td>{{ toolkit.psychoanalyst.user.name}}</td>
                 <td>{{ toolkit.rank.name}}</td>
                 <td>{{ toolkit.sub_rank.name}}</td>
                 <td>
@@ -69,6 +77,17 @@
         mounted(){
             store.dispatch('classToolkit/query', this.tool);
             let selects = [
+                {
+                    url: `${ADMIN_CONFIG.API_URL}/psychoanalysts`,
+                    selector:"select[name=psychoanalysts]",
+                    processResults(data){
+                        return {
+                            results: data.map((psychoanalyst) => {
+                                return {id: psychoanalyst.id, text: psychoanalyst.user.name}
+                            })
+                        }
+                    }
+                },
                 {
                     url: `${ADMIN_CONFIG.API_URL}/ranks`,
                     selector:"select[name=ranks]",
@@ -139,6 +158,7 @@
             },
             store(){
                 store.dispatch('classToolkit/store',{
+                    psychoanalystId: $("select[name=psychoanalysts]").val(),
                     rankId: $("select[name=ranks]").val(),
                     subRankId: $("select[name=sub_ranks]").val(),
                     subSubRankId: $("select[name=sub_sub_ranks]").val(),

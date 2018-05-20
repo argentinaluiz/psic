@@ -30,9 +30,9 @@ const actions = {
                 context.commit('set',response.data);
             })
     },
-    store(context, {rankId,subRankId, subSubRankId, toolId}){
+    store(context, {rankId,subRankId, subSubRankId, toolId, psychoanalystId}){
         return ClassToolkit.save({tool: toolId},
-            {rank_id:rankId,sub_rank_id:subRankId ,sub_sub_rank_id: subSubRankId}
+            {rank_id:rankId,sub_rank_id:subRankId ,sub_sub_rank_id: subSubRankId, psychoanalyst_id: psychoanalystId}
             )
             .then(response => {
                 context.commit('add',response.data)

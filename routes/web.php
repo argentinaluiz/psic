@@ -228,7 +228,6 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['aut
     
     Route::group(['prefix' => 'tools/{tool}', 'as' => 'tools.'],
     function (){
-        Route::resource('psychoanalysts', 'ClassToolsController', ['only' => ['index', 'store', 'destroy']]);
         Route::resource('toolkits', 'ClassToolkitsController', ['only' => ['index','store','destroy']]);
     });
 
