@@ -3,7 +3,7 @@
 
 @section('breadcrumb')
     <h2>Pesquisas</h2>
-    {!! Breadcrumb::withLinks(array('Home' => '/', 'Listar pesquisas' => route('researches.index'), 'administração de psicanalistas' ))!!}
+    {!! Breadcrumb::withLinks(array('Home' => '/', 'Listar pesquisas' => route('researches.index'), 'Administração de psicanalistas' ))!!}
 @endsection
 
 @section('h5-title')

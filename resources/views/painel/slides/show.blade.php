@@ -53,7 +53,7 @@
         </tr>
         <tr>
             <th scope="row">Deletar?</th>
-            <td>{{$slide->deleted?'Sim': 'Não'}}</td>
+            <td>{{$slide->disponível?'Sim': 'Não'}}</td>
         </tr>
         </tbody>
     </table>   

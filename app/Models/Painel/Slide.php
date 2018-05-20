@@ -18,7 +18,7 @@ class Slide extends Model implements TableInterface
      */
     public function getTableHeaders()
     {
-        return ['ID', 'Título', 'Descrição', 'Link', 'Ordem','Deletado'];
+        return ['ID', 'Título', 'Descrição', 'Link', 'Ordem','Disponível'];
     }
 
     /**
@@ -41,8 +41,8 @@ class Slide extends Model implements TableInterface
                 return $this->link;
             case 'Ordem':
                 return $this->order;
-            case 'Deletado':
-                return $this->deleted?'Sim': 'Não';
+            case 'Disponível':
+                return $this->disponível?'Sim': 'Não';
         }
     }
   

@@ -28,7 +28,7 @@ class SlideForm extends Form
                 'rules' => 'min:3|max:1000'
             ])
             ->add('deleted', 'checkbox', [
-                'label' => 'Imagem deletada?',
+                'label' => 'Disponível?',
                 'value' => true,
                 'checked' => false
             ]);
