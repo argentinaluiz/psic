@@ -59,7 +59,7 @@ export default [
             {
                 name: 'psych.researches.list',
                 path: 'researches',
-                component: require('./components/psych/PsychResearchList.vue'),
+                component: require('./components/psych/research/PsychResearchList.vue'),
                 meta: {
                     auth: true
                 }
@@ -67,7 +67,7 @@ export default [
             {
                 name: 'psych.categories.list',
                 path: 'categories',
-                component: require('./components/psych/PsychCategoryList.vue'),
+                component: require('./components/psych/research/PsychCategoryList.vue'),
                 meta: {
                     auth: true
                 }

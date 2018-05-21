@@ -8,10 +8,13 @@
 </template>
 
 <script type="text/javascript">
-	import store from '../../store/store';
+	import store from '../../../store/store';
 
     export default {
         computed: {
+            storeType(){
+                return 'psych';
+            },
             categories() {
                 return store.state.psych.category.categories;
 			}

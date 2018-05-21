@@ -58,14 +58,16 @@
 </template>
 
 <script type="text/javascript">
-	import store from '../../store/store';
-	import PsychCategoryListComponent from './PsychCategoryList.vue';
+	import store from '../../../store/store';
 
     export default {
 		components:{
-            'psych-category-list' : PsychCategoryListComponent
+			'psych-category-list' : require('./PsychCategoryList.vue'),
         },
         computed: {
+			storeType(){
+                return 'psych';
+            },
             researches() {
                 return store.state.psych.research.researches;
 			}
