@@ -83,7 +83,7 @@ export default [
             {
                 name: 'psych.class_toolkits.list',
                 path: 'class_toolkits',
-                component: require('./components/psych/PsychClassToolkitList.vue'),
+                component: require('./components/psych/class_toolkit/PsychClassToolkitList.vue'),
                 meta: {
                     auth: true
                 }
@@ -92,6 +92,38 @@ export default [
                 name: 'psych.dashboard',
                 path: 'dashboard',
                 component: require('./components/psych/PsychDashboard.vue'),
+                meta: {
+                    auth: true
+                }
+            },
+            {
+                name: 'psych.treatment',
+                path: 'treatment',
+                component: require('./components/psych/PsychTreatment.vue'),
+                meta: {
+                    auth: true
+                }
+            },
+            {
+                name: 'psych.equipment',
+                path: 'equipment',
+                component: require('./components/psych/PsychEquipment.vue'),
+                meta: {
+                    auth: true
+                }
+            },
+            {
+                name: 'psych.oedipus',
+                path: 'oedipus',
+                component: require('./components/psych/PsychOedipus.vue'),
+                meta: {
+                    auth: true
+                }
+            },
+            {
+                name: 'psych.drug',
+                path: 'drug',
+                component: require('./components/psych/PsychDrug.vue'),
                 meta: {
                     auth: true
                 }
