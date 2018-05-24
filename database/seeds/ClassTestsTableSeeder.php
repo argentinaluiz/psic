@@ -14,7 +14,7 @@ class ClassTestsTableSeeder extends Seeder
      */
     public function run()
     {
-        $classMeetings = \App\Models\Painel\classMeeting::all();
+        $classMeetings = \App\Models\Painel\ClassMeeting::all();
         $psychDefault = \App\Models\Painel\Psychoanalyst::find(1);
         $self = $this;
         /**
