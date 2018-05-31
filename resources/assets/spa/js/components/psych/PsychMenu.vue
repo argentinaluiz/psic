@@ -12,7 +12,12 @@
                     { name: "Dashboard", routeName: 'psych.dashboard' },
                     { name: "Categorias", routeName: 'psych.class_meetings.list' },
                     { name: "Pesquisas", routeName: 'psych.researches.list' },
-                    { name: "Recursos ClassToolkit", routeName: 'psych.class_toolkits.list' }
+                    { name: "Recursos", routeName: 'psych.tools.list' },
+                    { name: "Recursos ClassToolkit", routeName: 'psych.class_toolkits.list' },
+                    { name: "Tratamento", routeName: 'psych.treatment' },
+                    { name: "Aparelho Psíquico", routeName: 'psych.equipment' },
+                    { name: "Édipo", routeName: 'psych.oedipus' },
+                    { name: "Fármaco", routeName: 'psych.drug' }
                 ],
                 brandRouteName: 'psych.class_meetings.list'
             }
