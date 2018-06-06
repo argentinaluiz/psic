@@ -21,10 +21,10 @@
     import store from '../../../store/store';
 
     export default {
-        props: ['classToolkit'],
         components:{
             'psych-class-toolkit-frame' : require('./PsychClassToolkitFrame.vue')
         },
+        props: ['classToolkit'],
         computed: {
             classToolkit(){
                 return this.$deepModel('psych.classToolkit.classToolkit');

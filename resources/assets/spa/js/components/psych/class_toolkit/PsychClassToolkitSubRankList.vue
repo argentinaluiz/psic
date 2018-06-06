@@ -60,11 +60,11 @@
     import store from '../../../store/store';
 
     export default {
-        props: ['classToolkit'],
         components:{
             'psych-class-toolkit-sub-sub-rank-list' : require('./PsychClassToolkitSubSubRankList.vue'),
             'psych-class-toolkit-frame' : require('./PsychClassToolkitFrame.vue')
         },
+        props: ['classToolkit'],
         computed: {
             classToolkits() {
                 return store.state.psych.classToolkit.classToolkits;

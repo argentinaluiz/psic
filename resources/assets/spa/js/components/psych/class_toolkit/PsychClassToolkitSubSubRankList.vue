@@ -10,10 +10,10 @@
     import store from '../../../store/store';
 
     export default {
-         props: ['classToolkit'],
          components:{
             'psych-class-toolkit-sub-sub-rank-tab' : require('./PsychClassToolkitSubSubRankTab.vue')
         },
+        props: ['classToolkit'],
         computed: {
             classToolkits() {
                 return store.state.psych.classToolkit.classToolkits;
