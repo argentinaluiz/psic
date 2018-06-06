@@ -1,6 +1,6 @@
 <template>
     <div class="ibox-title">
-        <h5> Nome da Categoria <!-- {{ classToolkit.rank.name }} --></h5><!-- Aqui vai a categoria -->
+        <h5> {{ classToolkit.rank.name }} </h5><!-- Aqui vai a categoria -->
         <div class="ibox-tools">
             <a class="collapse-link">
                 <i class="fa fa-chevron-up"></i>
@@ -16,6 +16,7 @@
     import store from '../../../store/store';
 
     export default {
+        props: ['classToolkit'],
         computed: {
             classToolkits() {
                 return store.state.psych.classToolkit.classToolkits;

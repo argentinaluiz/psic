@@ -12,13 +12,13 @@
                 <div class="col-sm-12">
                     <div class="ibox float-e-margins" v-for="(classToolkit, index) in classToolkits" :key="index">
                         <template>
-							<psych-class-toolkit-rank-list></psych-class-toolkit-rank-list>	
+							<psych-class-toolkit-rank-list :classToolkit="classToolkit"></psych-class-toolkit-rank-list>	
 						</template>
                         <div  class="ibox-content">  
 							<div class="panel-body">
                                 <div class="panel-group">
 									<template>
-										<psych-class-toolkit-sub-rank-list></psych-class-toolkit-sub-rank-list>	
+										<psych-class-toolkit-sub-rank-list :classToolkit="classToolkit"></psych-class-toolkit-sub-rank-list>	
 									</template>
                                 </div>
                             </div>

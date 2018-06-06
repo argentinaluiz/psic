@@ -1,26 +1,10 @@
 <template>
-     <div class="panel panel-default" >
-        <div class="panel-heading">
-            <h5 class="panel-title"><!-- Aqui vai a subcategoria-->
-                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" class="collapsed">Collapsible Group Item #1</a>
-            </h5>
-        </div>
-         <div id="collapseOne" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
-            <div class="panel-body">
-                <template>
-                    <psych-class-toolkit-sub-sub-rank-list></psych-class-toolkit-sub-sub-rank-list>	
-                </template>
-            </div>
-        </div>
-
-
-		<!-- 
+    <div class="panel panel-default" >
         <div class="panel-heading">
             <h5 class="panel-title"> 
                 <a data-toggle="collapse"  :href="`#collapse${index}`"  aria-expanded="false" class="collapsed">{{ classToolkit.sub_rank.name }}</a>
             </h5>
         </div>
-		
 		
         <div :id="`collapse${index}`" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
             <div class="panel-body">
@@ -69,7 +53,6 @@
                 </div>
             </div>
         </div>
-		-->
     </div>
 </template>
 
@@ -77,6 +60,7 @@
     import store from '../../../store/store';
 
     export default {
+        props: ['classToolkit'],
         components:{
             'psych-class-toolkit-sub-sub-rank-list' : require('./PsychClassToolkitSubSubRankList.vue'),
             'psych-class-toolkit-frame' : require('./PsychClassToolkitFrame.vue')
