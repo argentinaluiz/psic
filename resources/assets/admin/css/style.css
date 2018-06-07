@@ -75,7 +75,7 @@ h5 {margin-top: 5px;font-weight: 600;}
 .nav.navbar-top-links .dropdown-alerts a {font-size: 12px;}
 .nav-header {padding: 33px 25px;background-color: #2f4050;background-image: url("patterns/header-profile.png");}
 .pace-done .nav-header {transition: all 0.4s;}
-.nav > li.active {border-left: 4px solid #19aa8d;background: #293846;}
+.nav > li.active {border-left: 4px solid #FA6900;background: #293846;}
 .nav.nav-second-level > li.active {border: none;}
 .nav.nav-second-level.collapse[style] {height: auto !important;}
 .nav-header a {color: #DFE4ED;}
@@ -1508,7 +1508,7 @@ ul.clear-list:first-child {border-top: none !important;}
 .timeline-item .content:hover {background: #f6f6f6;}
 /* PIN BOARD */
 ul.notes li,
-ul.tag-list li {list-style: none;}
+ul.tag-list li, ul.category-list li {list-style: none;}
 ul.notes li h4 {margin-top: 20px;font-size: 16px;}
 ul.notes li div {text-decoration: none;color: #000;background: #ffc;display: block;height: 140px;width: 140px;padding: 1em;position: relative;}
 ul.notes li div small {position: absolute;top: 5px;right: 5px;font-size: 10px;}
@@ -1539,7 +1539,7 @@ ul.notes li div {text-decoration: none;color: #000;background: #ffc;display: blo
 .category-list li a .text-danger {color: #EF5352;}
 .category-list li a .text-warning {color: #F8AC59;}
 .file-manager h5.tag-title {margin-top: 20px;}
-.tag-list li {float: left;}
+.tag-list li, .category-list li {float: left;}
 .tag-list li a {font-size: 10px;background-color: #f3f3f4;padding: 5px 12px;color: inherit;border-radius: 2px;border: 1px solid #e7eaec;margin-right: 5px;margin-top: 5px;display: block;}
 .file {border: 1px solid #e7eaec;padding: 0;background-color: #fff;position: relative;margin-bottom: 20px;margin-right: 20px;}
 .file-manager .hr-line-dashed {margin: 15px 0;}
@@ -1592,6 +1592,13 @@ a.compose-mail {padding: 8px 10px;}
 .mail-attachment {border-top: 1px solid #e7eaec;padding: 20px;font-size: 12px;}
 .mailbox-content {background: none;border: none;padding: 10px;}
 .mail-ontact {width: 23%;}
+/* TREATMENT */
+.subpage-title { overflow: hidden; position: relative; }
+.subpage-title h5 { position: relative; margin: 0; font-size: 12px; line-height: 25px; }
+.subpage-title h5:after { background-color: #bdc3c7; }
+.subpage-title h5:before, .subpage-title h5:after { content: ""; width: 200%; height: 1px; display: inline-block; background-color: #ecf0f1; position: relative; vertical-align: bottom; margin: 0 -200% 0 0; left: 20px; bottom: 12px; }
+.subpage-title h5:before { left: -20px; margin: 0 0 0 -200%; }
+.title2 { color: white; background-color: #428bca; padding: 5px 5px 5px 10px; font-size: 12px; font-weight: normal; margin-bottom: 10px; }
 /* PROJECTS */
 .project-people,
 .project-actions {text-align: right;vertical-align: middle;}

@@ -27,7 +27,7 @@
 							<img alt="image" class="img-circle" src="{{ asset('img/profile_small.jpg')}} " />
 							 </span>
 							<a data-toggle="dropdown" class="dropdown-toggle" href="#">
-							<span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">{{ Auth::user()->name }}</strong>
+							<span class="clear"> <span class="block m-t-xs cut"> <strong class="font-bold">{{ Auth::user()->name }}</strong>
 							 </span> <span class="text-muted text-xs block">administrador <b class="caret"></b></span> </span> </a>
 							<ul class="dropdown-menu animated fadeInRight m-t-xs">
 								<li><a href="{{ route('site.perfil')}}">Perfil</a></li>
