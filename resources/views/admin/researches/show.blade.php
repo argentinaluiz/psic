@@ -44,10 +44,6 @@
             <th scope="row">Ano</th>
             <td>{{$research->year}}</td>
         </tr>
-         <tr>
-            <th scope="row">Categorias</th>
-            <td> {{$research->textCategories}}</td>
-        </tr>
         <tr>
             <th scope="row">Descrição</th>
             <td>{{$research->description}}</td>

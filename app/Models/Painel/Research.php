@@ -16,63 +16,21 @@ class Research extends Model
         'active'
     ];
 
-    public function categories()
+    public function documents()
     {
-        return $this->belongsToMany(Category::class, 'category_research', 'category_id', 'research_id');
+      return $this->hasMany(Arcade::class);
     }
 
-    public function psychoanalysts()
+    public function sets()
     {
-        return $this->belongsToMany(Psychoanalyst::class);
+        return $this->hasMany(ClassSet::class);
     }
 
     public function scopeByPsychoanalyst($query, $psychoanalystId)
     {
-        return $query->whereHas('psychoanalysts', function ($query) use($psychoanalystId){
+        return $query->whereHas('sets', function ($query) use($psychoanalystId){
             $query->where('psychoanalyst_id', $psychoanalystId);
         });
-    }
-
-
-    public function addCategory($category){
-        if (is_string($category)) {
-            $category = Category::where('name','=',$category)->firstOrFail();
-        }
-
-        if($this->existCategory($category)){
-            return;
-        }
-        return $this->categories()->attach($category);
-
-    }
-
-    public function existCategory($category)
-    {
-        if (is_string($category)) {
-            $category = Category::where('name','=',$category)->firstOrFail();
-        }
-        return (boolean) $this->categories()->find($category->id);
-
-    }
-
-    public function deleteCategory($category)
-    {
-        if (is_string($category)) {
-            $category = Category::where('name','=',$category)->firstOrFail();
-        }
-        return $this->categories()->detach($category);
-    }
-    
-    public function existThisCategory($category)
-    {
-      $researchCategories = $this->categories;
-      return $categories->intersect($researchCategories)->count();
-    }
-
-
-    public function documents()
-    {
-      return $this->hasMany(Arcade::class);
     }
 
     public function getTextCategoriesAttribute($value)
