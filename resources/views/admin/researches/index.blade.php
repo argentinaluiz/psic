@@ -26,7 +26,6 @@
 			<th>Ano</th>
 			<th>Tags</th>
 			<th>Descrição</th>
-			<th>Categorias</th>
 			<th>Ativo?</th>
 			<th>Ações</th>
 		</tr>
@@ -42,12 +41,10 @@
 					<td>{{ $research->year }}</td>
 					<td>{{ $research->tag }}</td>
 					<td>{{ $research->description }}</td>
-					<td>{{ $research->TextCategories }}</td>
 					<td>{{ $research->active?'Sim': 'Não'}}</td>
 					<td>
-						<a class="btn btn-link" href="{{route('researches.category',['research' => $research->id])}}"><span class="glyphicon glyphicon-tags"></span> Categorias</a> |
 						<a class="btn btn-link" href="{{route('researches.arcade',['research' => $research->id])}}"><span class="glyphicon glyphicon-book"></span> Documentos</a> |
-						<a class="btn btn-link" href="{{route('researches.psychoanalysts.index',['research' => $research->id])}}"><span class="glyphicon glyphicon-user"></span> Psicanalistas</a> |
+						<a class="btn btn-link" href="{{route('researches.sets.index',['research' => $research->id])}}"><span class="glyphicon glyphicon-tags"></span> Sets</a> |
 						<a class="btn btn-link" href="{{route('researches.edit',['research' => $research->id])}}"><span class="glyphicon glyphicon-pencil"></span> Editar</a> |
 						<a class="btn btn-link" href="{{route('researches.show',['research' => $research->id])}}"><span class="glyphicon glyphicon-folder-open"></span> Ver</a>
 					</td>

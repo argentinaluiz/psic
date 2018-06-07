@@ -195,6 +195,7 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['aut
     Route::group(['prefix' => 'researches/{research}', 'as' => 'researches.'],
     function (){
         Route::resource('psychoanalysts', 'ClassPsychoanalystsController', ['only' => ['index', 'store', 'destroy']]);
+        Route::resource('sets', 'ClassSetsController', ['only' => ['index', 'store', 'destroy']]);
     });
 
     Route::resource('researches', 'ResearchesController');
@@ -256,5 +257,6 @@ Route::prefix('admin')->group(function () {
         Route::name('ranks.index')->get('ranks', 'RanksController@index');
         Route::name('sub_ranks.index')->get('sub_ranks', 'SubRanksController@index');
         Route::name('sub_sub_ranks.index')->get('sub_sub_ranks', 'SubSubRanksController@index');
+        Route::name('categories.index')->get('categories', 'CategoriesController@index');
     });
 });

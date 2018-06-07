@@ -12,11 +12,25 @@ class ResearchesTableSeeder extends Seeder
             ->create()
             ->each(function (\App\Models\Painel\Research $model) use ($psychoanalysts, $categories){
                 /** @var Illuminate\Support\Collection $psychoanalystCol */
-                $psychoanalystCol = $psychoanalysts->random(10);
+
+                $set = rand(3,9);
+
+                $psychoanalystCol = $psychoanalysts->random($set);
+                $categoryCol = $categories->random($set);
+                foreach (range(1,$set) as $value){
+                    $model->sets()->create([
+                        'category_id' => $categoryCol->get($value-1)->id,
+                        'psychoanalyst_id' => $psychoanalystCol->get($value-1)->id,
+                    ]);
+                }
+                
+                /* $psychoanalystCol = $psychoanalysts->random(10);
                 $model->psychoanalysts()->attach($psychoanalystCol->pluck('id'));
 
+
+
                 $categoryCol = $categories->random(3);
-                $model->categories()->attach($categoryCol->pluck('id'));
+                $model->categories()->attach($categoryCol->pluck('id'));*/
             });
     }
 }

@@ -25,7 +25,6 @@
             <th>Título</th>
 			<th>Ano</th>
 			<th>Descrição</th>
-			<th>Categorias</th>
 			<th>Ativo?</th>
 			<th>Ações</th>
 		</tr>
@@ -40,7 +39,6 @@
                     <td>{{ $tool->title }}</td>
 					<td>{{ $tool->year }}</td>
 					<td>{{ $tool->description }}</td>
-					<td></td>
 					<td>{{ $tool->active?'Sim': 'Não'}}</td>
 					<td>
 						<a class="btn btn-link" href="{{route('tools.edit',['tool' => $tool->id])}}"><span class="glyphicon glyphicon-pencil"></span> Editar</a> |
