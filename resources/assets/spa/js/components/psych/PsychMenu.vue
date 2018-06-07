@@ -10,7 +10,7 @@
             return {
                 menus:[
                     { name: "Dashboard", routeName: 'psych.dashboard' },
-                    { name: "Categorias", routeName: 'psych.class_meetings.list' },
+                    { name: "Perguntas", routeName: 'psych.class_meetings.list' },
                     { name: "Pesquisas", routeName: 'psych.researches.list' },
                     { name: "Recursos", routeName: 'psych.tools.list' },
                     { name: "Recursos ClassToolkit", routeName: 'psych.class_toolkits.list' },
