@@ -25,6 +25,7 @@ class Tool extends Model
         return $this->hasMany(ClassToolkit::class);
     }
 
+
     public function scopeByPsychoanalyst($query, $psychoanalystId)
     {
         return $query->whereHas('toolkits', function ($query) use($psychoanalystId){

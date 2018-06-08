@@ -34,5 +34,4 @@ class Category extends Model implements TableInterface
         return $this->belongsToMany('App\Models\Painel\Research', 'category_research', 'category_id', 'research_id');
     }
 
-
 }
