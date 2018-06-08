@@ -179,10 +179,6 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['aut
   
     Route::resource('permissions', 'PermissionController');
 
-    Route::get('researches/category/{id}', ['as'=>'researches.category','uses'=>'ResearchesController@category']);
-    Route::post('researches/category/{category}', ['as'=>'category.store','uses'=>'ResearchesController@categoryStore']);
-    Route::delete('researches/category/{research}/{category}', ['as'=>'category.destroy','uses'=>'ResearchesController@categoryDestroy']);  
-
     Route::get('researches/arcade/{research}', ['as'=>'researches.arcade','uses'=>'ResearchesController@indexArcade']);
     Route::get('researches/arcade/create/{research}', ['as'=>'researches.arcade.create','uses'=>'ResearchesController@createArcade']);
     Route::post('researches/arcade/store', ['as'=>'researches.arcade.store','uses'=>'ResearchesController@storeArcade']);
@@ -194,7 +190,6 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['aut
    
     Route::group(['prefix' => 'researches/{research}', 'as' => 'researches.'],
     function (){
-        Route::resource('psychoanalysts', 'ClassPsychoanalystsController', ['only' => ['index', 'store', 'destroy']]);
         Route::resource('sets', 'ClassSetsController', ['only' => ['index', 'store', 'destroy']]);
     });
 

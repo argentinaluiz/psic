@@ -14,9 +14,7 @@
 					<div class="ibox float-e-margins">
 						<div class="ibox-content">
 							<div class="file-manager">
-								<template>
-									<psych-category-list></psych-category-list>
-								</template>
+								
 								<div class="clearfix"></div>
 								<div class="hr-line-dashed"></div>
 								
@@ -61,9 +59,7 @@
 	import store from '../../../store/store';
 
     export default {
-		components:{
-			'psych-category-list' : require('./PsychCategoryList.vue'),
-        },
+		
         computed: {
 			storeType(){
                 return 'psych';

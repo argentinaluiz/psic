@@ -191,11 +191,12 @@ class ResearchesController extends Controller
             abort(403,"Não autorizado!");
           }
     
+         /* 
           foreach ($research->categories as $key => $value) {
             $research->categories()->detach($value);
           }
     
-        /*  foreach ($research->imagens as $key => $value) {
+          foreach ($research->imagens as $key => $value) {
             $value->delete();
           }
         */

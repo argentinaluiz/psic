@@ -26,6 +26,7 @@ class ClassSet extends Model
         return $this->belongsTo(Psychoanalyst::class);
     }
 
+
     public function toArray()
     {
         $data = parent::toArray();
@@ -34,4 +35,5 @@ class ClassSet extends Model
         $data['psychoanalyst'] = $this->psychoanalyst;
         return $data;
     }
+
 }

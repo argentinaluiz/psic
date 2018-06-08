@@ -10,21 +10,27 @@ class ResearchesController extends Controller
 {
     public function index()
     {
-        $psychoanalyst = \Auth::user()->userable;
-        $results = $psychoanalyst->researches;
-        /* $results = Research
+         $results = Research
             ::byPsychoanalyst(\Auth::user()->userable->id)
-            ->get();*/
+            ->get();
         return $results;
+
+        /*$psychoanalyst = \Auth::user()->userable;
+        $results = $psychoanalyst->researches;
+       	return $results;*/
     }
 
     public function show($id)
     {
-        $psychoanalyst = \Auth::user()->userable;
-        $results = $psychoanalyst->researches()->findOrFail($id);
-        /* $results = Research
+        
+       $results = Research
             ::byPsychoanalyst(\Auth::user()->userable->id)
-            ->findOrFail($id);*/
+            ->findOrFail($id);
         return $results;
+
+        /*$psychoanalyst = \Auth::user()->userable;
+        $results = $psychoanalyst->researches()->findOrFail($id);
+        return $results;*/
+
     }
 }
