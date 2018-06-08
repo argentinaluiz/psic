@@ -106,14 +106,23 @@ class SubRanksController extends Controller
     }
 
 
-    public function destroy(SubRank $sub_rank)
+    public function destroy($id)
     {
         if(Gate::denies('subRanks-delete')){
             abort(403,"Não autorizado!");
         }
 
-        $sub_rank->delete();
-        session()->flash('message','Subcategoria excluída com sucesso');
-        return redirect()->route('sub_ranks.index');
+        $item = SubRank::find($id);
+            if ($item->toolkits()->count() > 0){
+            session()->flash('message','Está em uso, não pode ser deletada...');
+                return redirect()
+                    ->route('sub_ranks.index');
+                }
+            
+
+        $item->delete();
+                session()->flash('message','Subcategoria excluída com sucesso');
+                return redirect()
+                ->route('sub_ranks.index'); 
     }
 }

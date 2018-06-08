@@ -105,14 +105,22 @@ class TypeChoicesController extends Controller
     }
 
 
-    public function destroy(TypeChoice $type_choice)
+    public function destroy($id)
     {
         if(Gate::denies('typeChoices-delete')){
             abort(403,"Não autorizado!");
         }
+        $item = TypeChoice::find($id);
+            if ($item->choosings()->count() > 0){
+            session()->flash('message','Está em uso, não pode ser deletada...');
+            return redirect()
+                ->route('type_choices.index');
+            }
+                
 
-        $type_choice->delete();
-        session()->flash('message','Tipo de alternativa excluída com sucesso');
-        return redirect()->route('type_choices.index');
+        $item->delete();
+            session()->flash('message','Tipo de alternativa excluída com sucesso');
+            return redirect()
+              ->route('type_choices.index'); 
     }
 }

@@ -16,6 +16,7 @@ class ClassToolkit extends Model
         'psychoanalyst_id'
     ];
 
+
     public function tool(){
         return $this->belongsTo(Tool::class);
     }

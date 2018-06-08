@@ -11,6 +11,11 @@ class SubSheet extends Model implements TableInterface
         'name'
     ];
 
+    public function meetings()
+    {
+        return $this->hasMany(ClassMeeting::class);//não é um relacionamento com uma tabela pivot. Cada classe tem muitas sessões relacionadas
+    }
+
     public function getTableHeaders()
     {
         return ['ID', 'Nome'];

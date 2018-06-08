@@ -106,14 +106,23 @@ class RanksController extends Controller
     }
 
 
-    public function destroy(Rank $rank)
+    public function destroy($id)
     {
         if(Gate::denies('ranks-delete')){
             abort(403,"Não autorizado!");
         }
 
-        $rank->delete();
-        session()->flash('message','Categoria excluída com sucesso');
-        return redirect()->route('ranks.index');
+        $item = Rank::find($id);
+            if ($item->toolkits()->count() > 0){
+            session()->flash('message','Está em uso, não pode ser deletada...');
+            return redirect()
+                ->route('ranks.index');
+            }
+                
+
+        $item->delete();
+            session()->flash('message','Categoria excluída com sucesso');
+            return redirect()
+              ->route('ranks.index'); 
     }
 }

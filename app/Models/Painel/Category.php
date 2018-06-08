@@ -29,9 +29,17 @@ class Category extends Model implements TableInterface
         }
     }
 
+    public function sets()
+    {
+        return $this->hasMany(ClassSet::class);
+    }
+
+    /* 
     public function researches()
     {
         return $this->belongsToMany('App\Models\Painel\Research', 'category_research', 'category_id', 'research_id');
     }
+    */
+
 
 }

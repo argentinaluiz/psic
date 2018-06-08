@@ -116,10 +116,25 @@ class ClassInformationsController extends Controller
      * @param  \SON\Models\ClassInformation $class_information
      * @return \Illuminate\Http\Response
      */
-    public function destroy(ClassInformation $class_information)
+    public function destroy($id)
     {
+        $item = ClassInformation::find($id);
+            if ($item->meetings()->count() > 0){
+              session()->flash('message','Está em uso, não pode ser deletado...');
+              return redirect()
+                  ->route('class_informations.index');
+            }
+                
+
+            $item->delete();
+                session()->flash('message','Classe excluída com sucesso');
+                return redirect()
+                  ->route('class_informations.index');     
+        
+        /*
         $class_information->delete();
         session()->flash('message','Classe excluída com sucesso');
         return redirect()->route('class_informations.index');
+        */
     }
 }

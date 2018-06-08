@@ -104,14 +104,24 @@ class ListChoicesController extends Controller
     }
 
 
-    public function destroy(ListChoice $list_choice)
+    public function destroy($id)
     {
         if(Gate::denies('listChoices-delete')){
             abort(403,"Não autorizado!");
         }
 
-        $list_choice->delete();
-        session()->flash('message','Alternativa excluída com sucesso');
-        return redirect()->route('list_choices.index');
+        $item = ListChoice::find($id);
+            if ($item->choosings()->count() > 0){
+            session()->flash('message','Está em uso, não pode ser deletada...');
+            return redirect()
+                ->route('list_choices.index');
+            }
+                
+
+        $item->delete();
+            session()->flash('message','Alternativa excluída com sucesso');
+            return redirect()
+              ->route('list_choices.index'); 
+
     }
 }

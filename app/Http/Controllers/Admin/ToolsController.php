@@ -141,23 +141,38 @@ class ToolsController extends Controller
                             ->withInput();
     }
 
-    public function destroy(Tool $tool)
+    public function destroy($id)
     {
         if(Gate::denies('tools-delete')){
             abort(403,"Não autorizado!");
           }
     
+          $item = Tool::find($id);
+            if ($item->toolkits()->count() > 0){
+              session()->flash('message','Está em uso, não pode ser deletado...');
+              return redirect()
+                  ->route('tools.index');
+            }
+                
+
+            $item->delete();
+                session()->flash('message','Recurso excluído com sucesso');
+                return redirect()
+                  ->route('tools.index');     
+
+        /*    
           foreach ($tool->categories as $key => $value) {
             $tool->categories()->detach($value);
           }
     
-        /*  foreach ($tool->imagens as $key => $value) {
+          foreach ($tool->imagens as $key => $value) {
             $value->delete();
           }
-        */
+        
     
           $tool->delete();
           return redirect()->route('tools.index');
+        */
     }
 
     public function indexToolkit(Tool $tool)

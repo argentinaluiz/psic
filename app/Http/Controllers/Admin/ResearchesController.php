@@ -185,13 +185,29 @@ class ResearchesController extends Controller
                             ->withInput();
     }
 
-    public function destroy(Research $research)
+    public function destroy($id)
     {
         if(Gate::denies('researches-delete')){
             abort(403,"Não autorizado!");
           }
-    
-         /* 
+          
+          $item = Research::find($id);
+            if ($item->sets()->count() > 0){
+              session()->flash('message','Está em uso, não pode ser deletada...');
+              return redirect()
+                  ->route('researches.index');
+            }
+                
+
+            $item->delete();
+                session()->flash('message','Pesquisa excluída com sucesso');
+                return redirect()
+                  ->route('researches.index');     
+        
+          //$research->delete();
+          //return redirect()->route('researches.index');
+
+           /* 
           foreach ($research->categories as $key => $value) {
             $research->categories()->detach($value);
           }
@@ -201,8 +217,6 @@ class ResearchesController extends Controller
           }
         */
     
-          $research->delete();
-          return redirect()->route('researches.index');
     }
 
     public function indexArcade(Research $research)

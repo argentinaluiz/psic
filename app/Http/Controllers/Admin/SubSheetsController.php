@@ -138,14 +138,23 @@ class SubSheetsController extends Controller
      * @param  \App\Models\Painel\SubSheet
      * @return \Illuminate\Http\Response
      */
-    public function destroy(SubSheet $sub_sheet)
+    public function destroy($id)
     {
         if(Gate::denies('subSheets-delete')){
             abort(403,"Não autorizado!");
         }
+        $item = SubSheet::find($id);
+        if ($item->meetings()->count() > 0){
+          session()->flash('message','Está em uso, não pode ser deletada...');
+          return redirect()
+              ->route('sub_sheets.index');
+        }
+            
 
-        $sub_sheet->delete();
-        session()->flash('message','Sub Ficha excluída com sucesso');
-        return redirect()->route('sub_sheets.index');
+        $item->delete();
+            session()->flash('message','Sub Ficha excluída com sucesso');
+            return redirect()
+              ->route('sub_sheets.index'); 
+
     }
 }

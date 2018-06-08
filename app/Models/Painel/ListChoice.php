@@ -11,6 +11,11 @@ class ListChoice extends Model implements TableInterface
         'name'
     ];
 
+    public function choosings()
+    {
+    return $this->hasMany(ClassChoosing::class);
+    }
+    
     public function getTableHeaders()
     {
         return ['ID', 'Nome'];

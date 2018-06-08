@@ -139,14 +139,22 @@ class SheetsController extends Controller
      * @param  \App\Models\Painel\Sheet
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Sheet $sheet)
+    public function destroy($id)
     {
         if(Gate::denies('sheets-delete')){
             abort(403,"Não autorizado!");
         }
+        $item = Sheet::find($id);
+            if ($item->meetings()->count() > 0){
+              session()->flash('message','Está em uso, não pode ser deletada...');
+              return redirect()
+                  ->route('sheets.index');
+            }
+                
 
-        $sheet->delete();
-        session()->flash('message','Ficha excluída com sucesso');
-        return redirect()->route('sheets.index');
+            $item->delete();
+                session()->flash('message','Ficha excluída com sucesso');
+                return redirect()
+                  ->route('sheets.index');  
     }
 }

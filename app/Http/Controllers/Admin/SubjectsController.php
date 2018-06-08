@@ -143,14 +143,23 @@ class SubjectsController extends Controller
      * @param  \SON\Models\Subject $subject
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Subject $subject )
+    public function destroy($id )
     {
         if(Gate::denies('subjects-delete')){
             abort(403,"Não autorizado!");
         }
 
-        $subject->delete();
-        session()->flash('message','Patologia excluída com sucesso');
-        return redirect()->route('subjects.index');
+        $item = Subject::find($id);
+            if ($item->meetings()->count() > 0){
+              session()->flash('message','Está em uso, não pode ser deletada...');
+              return redirect()
+                  ->route('subjects.index');
+            }
+                
+
+            $item->delete();
+                session()->flash('message','Patologia excluída com sucesso');
+                return redirect()
+                  ->route('subjects.index');     
     }
 }
