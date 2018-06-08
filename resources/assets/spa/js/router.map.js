@@ -57,17 +57,17 @@ export default [
                 }
             },
             {
-                name: 'psych.researches.list',
-                path: 'researches',
-                component: require('./components/psych/research/PsychResearchList.vue'),
+                name: 'psych.class_sets.list',
+                path: 'class_sets',
+                component: require('./components/psych/class_set/PsychClassSetList.vue'),
                 meta: {
                     auth: true
                 }
             },
             {
-                name: 'psych.categories.list',
-                path: 'categories',
-                component: require('./components/psych/research/PsychCategoryList.vue'),
+                name: 'psych.researches.list',
+                path: 'researches',
+                component: require('./components/psych/research/PsychResearchList.vue'),
                 meta: {
                     auth: true
                 }
