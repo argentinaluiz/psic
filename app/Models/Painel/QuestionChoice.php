@@ -16,4 +16,11 @@ class QuestionChoice extends Model
         'true' => 'boolean'
     ];
 
+    public function choosings()
+    {
+        return $this->hasMany(ClassChoosing::class);
+    }
+
+  
+
 }
