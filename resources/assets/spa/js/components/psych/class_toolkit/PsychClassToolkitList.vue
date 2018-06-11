@@ -10,7 +10,7 @@
         <div class="wrapper wrapper-content  animated fadeInRight">
             <div class="row">
                 <div class="col-sm-12">
-                    <div class="ibox float-e-margins" v-for="(classToolkit, index) in classToolkits" :key="index">
+                    <div class="ibox float-e-margins" v-for="(classToolkit, key, index) in classToolkits" :key="index">
                         <template>
 							<psych-class-toolkit-rank-list :classToolkit="classToolkit"></psych-class-toolkit-rank-list>	
 						</template>
@@ -39,6 +39,9 @@
             'psych-class-toolkit-sub-rank-list' : require('./PsychClassToolkitSubRankList.vue')
         },
         computed: {
+        	storeType(){
+                return 'psych';
+            },
             classToolkits() {
                 return store.state.psych.classToolkit.classToolkits;
             }
