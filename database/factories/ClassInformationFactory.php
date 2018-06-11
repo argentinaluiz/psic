@@ -17,6 +17,7 @@ $factory->define(App\Models\Painel\ClassTest::class, function (Faker $faker) {
         'date_start' => $faker->dateTimeBetween('now','+1 hour'),
         'date_end' => $faker->dateTimeBetween('now','+1 hour'),
         'name' => $faker->sentence(3),
+        'question_type' => rand(1,3),
     ];
 });
 
