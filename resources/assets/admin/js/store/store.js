@@ -7,10 +7,11 @@ import classChoosing from './class_choosing';
 import classTool from './class_tool';
 import classToolkit from './class_toolkit';
 import classSet from './class_set';
+import classOpting from './class_opting';
 
 export default new Vuex.Store({
     modules: {
         //'classPatient': classPatient representado de modo simplificado por classPatient
-        classPatient, classPsychoanalyst, classMeeting, classChoosing, classTool, classToolkit, classSet
+        classPatient, classPsychoanalyst, classMeeting, classChoosing, classTool, classToolkit, classSet, classOpting
     }
 });

@@ -208,6 +208,7 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['aut
     Route::group(['prefix' => 'type_choices/{type_choice}', 'as' => 'type_choices.'],
             function () {
                 Route::resource('choosings', 'ClassChoosingsController', ['only' => ['index','store','destroy']]);
+                Route::resource('optings', 'ClassOptingsController', ['only' => ['index','store','destroy']]);
             });
     Route::resource('class_informations', 'ClassInformationsController');
     Route::resource('type_choices', 'TypeChoicesController');
@@ -248,6 +249,7 @@ Route::prefix('admin')->group(function () {
         Route::name('sheets.index')->get('sheets', 'SheetsController@index');
         Route::name('sub_sheets.index')->get('sub_sheets', 'SubSheetsController@index');
         Route::name('list_choices.index')->get('list_choices', 'ListChoicesController@index');
+        Route::name('question_choices.index')->get('question_choices', 'QuestionChoicesController@index');
         Route::name('tools.index')->get('tools', 'ToolsController@index');
         Route::name('ranks.index')->get('ranks', 'RanksController@index');
         Route::name('sub_ranks.index')->get('sub_ranks', 'SubRanksController@index');
