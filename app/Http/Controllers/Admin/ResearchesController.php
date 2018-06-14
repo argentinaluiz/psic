@@ -193,16 +193,16 @@ class ResearchesController extends Controller
           
           $item = Research::find($id);
             if ($item->sets()->count() > 0){
-              session()->flash('message','Está em uso, não pode ser deletada...');
               return redirect()
-                  ->route('researches.index');
+                  ->route('researches.index')
+                  ->with('message','Está em uso, não pode ser deletada...'); 
             }
                 
 
             $item->delete();
-                session()->flash('message','Pesquisa excluída com sucesso');
                 return redirect()
-                  ->route('researches.index');     
+                  ->route('researches.index')
+                  ->with('message','Pesquisa excluída com sucesso.');    
         
           //$research->delete();
           //return redirect()->route('researches.index');

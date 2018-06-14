@@ -112,16 +112,16 @@ class ListChoicesController extends Controller
 
         $item = ListChoice::find($id);
             if ($item->choosings()->count() > 0){
-            session()->flash('message','Está em uso, não pode ser deletada...');
-            return redirect()
-                ->route('list_choices.index');
-            }
+                return redirect()
+                ->route('list_choices.index')
+                ->with('message','Está em uso, não pode ser deletada...');
+         }
                 
 
         $item->delete();
-            session()->flash('message','Alternativa excluída com sucesso');
             return redirect()
-              ->route('list_choices.index'); 
+              ->route('list_choices.index')
+              ->with('message','Alternativa excluída com sucesso.');
 
     }
 }

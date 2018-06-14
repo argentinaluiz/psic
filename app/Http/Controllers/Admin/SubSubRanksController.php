@@ -101,8 +101,9 @@ class SubSubRanksController extends Controller
 
         $data = $form->getFieldValues();
         $sub_sub_rank->update($data);
-        session()->flash('message','Sub_Subcategoria editada com sucesso');
-        return redirect()->route('sub_sub_ranks.index');
+        return redirect()
+            ->route('sub_sub_ranks.index')
+            ->with('message','Sub_Subcategoria editada com sucesso');
     }
 
 
@@ -114,15 +115,15 @@ class SubSubRanksController extends Controller
 
         $item = SubSubRank::find($id);
             if ($item->toolkits()->count() > 0){
-            session()->flash('message','Está em uso, não pode ser deletada...');
                 return redirect()
-                    ->route('sub_sub_ranks.index');
+                    ->route('sub_sub_ranks.index')
+                    ->with('message','Está em uso, não pode ser deletada...');
                 }
             
 
         $item->delete();
-                session()->flash('message','Sub_Subcategoria excluída com sucesso');
                 return redirect()
-                ->route('sub_sub_ranks.index'); 
+                ->route('sub_sub_ranks.index')
+                ->with('message','Sub_Subcategoria excluída com sucesso');
     }
 }

@@ -151,15 +151,14 @@ class SubjectsController extends Controller
 
         $item = Subject::find($id);
             if ($item->meetings()->count() > 0){
-              session()->flash('message','Está em uso, não pode ser deletada...');
               return redirect()
-                  ->route('subjects.index');
+                  ->route('subjects.index')
+                  ->with('message','Está em uso, não pode ser deletada...');
             }
                 
-
             $item->delete();
-                session()->flash('message','Patologia excluída com sucesso');
                 return redirect()
-                  ->route('subjects.index');     
+                  ->route('subjects.index')
+                  ->with('message','Patologia excluída com sucesso.'); 
     }
 }

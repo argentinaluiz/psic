@@ -146,15 +146,17 @@ class SheetsController extends Controller
         }
         $item = Sheet::find($id);
             if ($item->meetings()->count() > 0){
-              session()->flash('message','Está em uso, não pode ser deletada...');
+
               return redirect()
-                  ->route('sheets.index');
+                  ->route('sheets.index')
+                  ->with('message','Está em uso, não pode ser deletada...');
             }
                 
 
             $item->delete();
-                session()->flash('message','Ficha excluída com sucesso');
                 return redirect()
-                  ->route('sheets.index');  
+                  ->route('sheets.index')
+                  ->with('message','Ficha excluída com sucesso.');
+                   
     }
 }

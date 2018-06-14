@@ -120,16 +120,16 @@ class ClassInformationsController extends Controller
     {
         $item = ClassInformation::find($id);
             if ($item->meetings()->count() > 0){
-              session()->flash('message','Está em uso, não pode ser deletado...');
               return redirect()
-                  ->route('class_informations.index');
+                  ->route('class_informations.index')
+                  ->with('message','Está em uso, não pode ser deletada...');
             }
                 
 
             $item->delete();
-                session()->flash('message','Classe excluída com sucesso');
                 return redirect()
-                  ->route('class_informations.index');     
+                  ->route('class_informations.index')
+                  ->with('message','Classe excluída com sucesso.');  
         
         /*
         $class_information->delete();

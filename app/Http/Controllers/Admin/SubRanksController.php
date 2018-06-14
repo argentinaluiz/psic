@@ -114,15 +114,15 @@ class SubRanksController extends Controller
 
         $item = SubRank::find($id);
             if ($item->toolkits()->count() > 0){
-            session()->flash('message','Está em uso, não pode ser deletada...');
                 return redirect()
-                    ->route('sub_ranks.index');
+                    ->route('sub_ranks.index')
+                    ->with('message','Está em uso, não pode ser deletada...');
                 }
             
 
         $item->delete();
-                session()->flash('message','Subcategoria excluída com sucesso');
                 return redirect()
-                ->route('sub_ranks.index'); 
+                ->route('sub_ranks.index')
+                ->with('message','Subcategoria excluída com sucesso.');
     }
 }

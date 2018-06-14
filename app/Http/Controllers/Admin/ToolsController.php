@@ -149,16 +149,16 @@ class ToolsController extends Controller
     
           $item = Tool::find($id);
             if ($item->toolkits()->count() > 0){
-              session()->flash('message','Está em uso, não pode ser deletado...');
               return redirect()
-                  ->route('tools.index');
+                  ->route('tools.index')
+                  ->with('message','Está em uso, não pode ser deletado...');
             }
                 
 
             $item->delete();
-                session()->flash('message','Recurso excluído com sucesso');
                 return redirect()
-                  ->route('tools.index');     
+                  ->route('tools.index')
+                  ->with('message','Recurso excluído com sucesso');    
 
         /*    
           foreach ($tool->categories as $key => $value) {
@@ -286,8 +286,9 @@ class ToolsController extends Controller
           $tool = $toolkit->tool;
 
           $registro->update($request->all());
-          session()->flash('message','Recurso editado com sucesso');
-          return redirect()->route('tools.toolkit', $tool);
+          return redirect()
+              ->route('tools.toolkit', $tool)
+              ->with('message','Recurso editado com sucesso');
 
       }
 
@@ -298,7 +299,7 @@ class ToolsController extends Controller
       }
 
       $toolkit->update(['deleted'=>'S']); 
-      session()->flash('message','Recurso excluído com sucesso');
-      return redirect()->back();
+           return redirect()->back()
+           ->with('message','Recurso excluído com sucesso');
     }
 }

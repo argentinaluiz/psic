@@ -145,16 +145,16 @@ class SubSheetsController extends Controller
         }
         $item = SubSheet::find($id);
         if ($item->meetings()->count() > 0){
-          session()->flash('message','Está em uso, não pode ser deletada...');
           return redirect()
-              ->route('sub_sheets.index');
+              ->route('sub_sheets.index')
+              ->with('message','Está em uso, não pode ser deletada...');
         }
             
 
         $item->delete();
-            session()->flash('message','Sub Ficha excluída com sucesso');
             return redirect()
-              ->route('sub_sheets.index'); 
+              ->route('sub_sheets.index')
+              ->with('message','Sub Ficha excluída com sucesso.');
 
     }
 }

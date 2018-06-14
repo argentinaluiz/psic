@@ -56,8 +56,9 @@ class CategoriesController extends Controller
 
         $data = $form->getFieldValues();
         Category::create($data);
-        $request->session()->flash('message','Categoria criada com sucesso');
-        return redirect()->route('categories.index');
+            return redirect()
+                ->route('categories.index')
+                ->with('message','Categoria criada com sucesso');
     }
 
     public function show(Category $category)
@@ -101,8 +102,8 @@ class CategoriesController extends Controller
 
         $data = $form->getFieldValues();
         $category->update($data);
-        session()->flash('message','Categoria editada com sucesso');
-        return redirect()->route('categories.index');
+            return redirect()->route('categories.index')
+            ->with('message','Categoria editada com sucesso');
     }
 
     public function destroy($id)
@@ -118,16 +119,16 @@ class CategoriesController extends Controller
 
         $item = Category::find($id);
             if ($item->sets()->count() > 0){
-                session()->flash('message','Está em uso em uma pesquisa, não pode ser deletada...');
                 return redirect()
-                    ->route('categories.index');
+                    ->route('categories.index')
+                    ->with('message','Está em uso em uma pesquisa, não pode ser deletada...');
             }
                 
 
             $item->delete();
-                session()->flash('message','Categoria excluída com sucesso');
                 return redirect()
-                  ->route('categories.index');   
+                  ->route('categories.index')
+                  ->with('message','Categoria excluída com sucesso');
 
        // $category->delete();
       //  session()->flash('message','Categoria excluída com sucesso');

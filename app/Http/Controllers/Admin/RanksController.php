@@ -114,15 +114,16 @@ class RanksController extends Controller
 
         $item = Rank::find($id);
             if ($item->toolkits()->count() > 0){
-            session()->flash('message','Está em uso, não pode ser deletada...');
+
             return redirect()
-                ->route('ranks.index');
+                ->route('ranks.index')
+                ->with('message','Está em uso, não pode ser deletada...');
             }
                 
 
         $item->delete();
-            session()->flash('message','Categoria excluída com sucesso');
             return redirect()
-              ->route('ranks.index'); 
+              ->route('ranks.index')
+              ->with('message','Categoria excluída com sucesso.');
     }
 }

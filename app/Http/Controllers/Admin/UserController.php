@@ -166,8 +166,10 @@ class UserController extends Controller
 
         $data = $form->getFieldValues();
         $user->update($data);
-        session()->flash('message','Usuário editado com sucesso');
-        return redirect()->route('users.index');
+        return redirect()
+            ->route('users.index')
+            ->with('message','Usuário editado com sucesso.'); 
+            
     }
 
 
@@ -178,8 +180,9 @@ class UserController extends Controller
         }
         
         $user->delete();
-        session()->flash('message','Usuário excluído com sucesso');
-        return redirect()->route('users.index');
+        return redirect()
+            ->route('users.index')
+            ->with('message','Usuário excluído com sucesso.'); 
     }
 
 }
