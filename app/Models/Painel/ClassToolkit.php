@@ -25,12 +25,12 @@ class ClassToolkit extends Model
         return $this->belongsTo(Rank::class);
     }
 
-    public function subRank(){
-        return $this->belongsTo(SubRank::class);
+    public function subRanks(){
+        return $this->hasMany(ClassToolKit::class, 'sub_rank_id', 'sub_rank_id');
     }
 
-    public function subSubRank(){
-        return $this->belongsTo(SubSubRank::class);
+    public function subSubRanks(){
+        return $this->hasMany(ClassToolKit::class, 'sub_sub_rank_id', 'sub_sub_rank_id');
     }
 
     public function psychoanalyst(){
