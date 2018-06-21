@@ -6,6 +6,6 @@ class SheetsTableSeeder extends Seeder
 {
     public function run()
     {
-        factory(\App\Models\Painel\Sheet::class,20)->create();
+        factory(\App\Models\Painel\Sheet::class,10)->create();
     }
 }

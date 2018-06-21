@@ -10,7 +10,7 @@ class ToolsTableSeeder extends Seeder
         $ranks = \App\Models\Painel\Rank::all();
         $sub_ranks = \App\Models\Painel\SubRank::all();
         $sub_sub_ranks = \App\Models\Painel\SubSubRank::all();
-        factory(\App\Models\Painel\Tool::class,50)
+        factory(\App\Models\Painel\Tool::class,20)
             ->create()
             ->each(function (\App\Models\Painel\Tool $model) use ($psychoanalysts, $ranks, $sub_ranks, $sub_sub_ranks ){
                 /** @var Illuminate\Support\Collection $psychoanalystCol */

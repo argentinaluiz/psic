@@ -6,6 +6,6 @@ class SubSubRanksTableSeeder extends Seeder
 {
     public function run()
     {
-        factory(\App\Models\Painel\SubSubRank::class,20)->create();
+        factory(\App\Models\Painel\SubSubRank::class,10)->create();
     }
 }

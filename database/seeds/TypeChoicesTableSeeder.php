@@ -4,16 +4,12 @@ use Illuminate\Database\Seeder;
 
 class TypeChoicesTableSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
+
     public function run()
     {
         //factory(\App\Models\Painel\TypeChoice::class,50)->create();
         $list_choices = \App\Models\Painel\ListChoice::all();
-        factory(\App\Models\Painel\TypeChoice::class,50)
+        factory(\App\Models\Painel\TypeChoice::class,20)
             ->create()
             ->each(function(\App\Models\Painel\TypeChoice $model) use($list_choices){
                 

@@ -7,7 +7,7 @@ class ClassOptingsTableSeeder extends Seeder
     public function run()
     {
         $question_choices = \App\Models\Painel\QuestionChoice::all();
-        factory(\App\Models\Painel\TypeChoice::class,50)
+        factory(\App\Models\Painel\TypeChoice::class,20)
             ->create()
             ->each(function(\App\Models\Painel\TypeChoice $model) use($question_choices){
                 

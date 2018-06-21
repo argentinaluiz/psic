@@ -11,6 +11,6 @@ class ListChoicesTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(\App\Models\Painel\ListChoice::class,50)->create();
+        factory(\App\Models\Painel\ListChoice::class,10)->create();
     }
 }

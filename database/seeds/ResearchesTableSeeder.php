@@ -8,7 +8,7 @@ class ResearchesTableSeeder extends Seeder
     {
         $psychoanalysts = \App\Models\Painel\Psychoanalyst::all();
         $categories = \App\Models\Painel\Category::all();
-        factory(\App\Models\Painel\Research::class,50)
+        factory(\App\Models\Painel\Research::class,20)
             ->create()
             ->each(function (\App\Models\Painel\Research $model) use ($psychoanalysts, $categories){
                 /** @var Illuminate\Support\Collection $psychoanalystCol */

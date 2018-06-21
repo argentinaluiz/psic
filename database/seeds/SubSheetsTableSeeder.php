@@ -6,6 +6,6 @@ class SubSheetsTableSeeder extends Seeder
 {
     public function run()
     {
-        factory(\App\Models\Painel\SubSheet::class,20)->create();
+        factory(\App\Models\Painel\SubSheet::class,10)->create();
     }
 }

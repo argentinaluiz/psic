@@ -16,7 +16,7 @@ class ClassInformationsTableSeeder extends Seeder
         $subjects = \App\Models\Painel\Subject::all();
         $sheets = \App\Models\Painel\Sheet::all();
         $sub_sheets = \App\Models\Painel\SubSheet::all();
-        factory(\App\Models\Painel\ClassInformation::class,50)
+        factory(\App\Models\Painel\ClassInformation::class,20)
             ->create()
             ->each(function (\App\Models\Painel\ClassInformation $model) use ($patients, $psychoanalysts, $subjects, $sheets, $sub_sheets ){
                 /** @var Illuminate\Support\Collection $patients */
