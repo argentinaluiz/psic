@@ -87,15 +87,6 @@
 						</ul>
 					</li>
 					<li>
-						<a href=""><i class="fa fa-edit"></i> <span class="nav-label">Tratamento</span><span class="fa arrow"></span></a>
-						<ul class="nav nav-second-level collapse">
-							<li><a href="">Depressão</a></li>
-							<li><a href="">Neuroses</a></li>
-							<li><a href="">Psiconeurose</a></li>
-							<li><a href="">Conversão/Histeria</a></li>
-						</ul>
-					</li>
-					<li>
 						<a href=""><i class="fa fa-pie-chart"></i> <span class="nav-label">Pesquisas</span><span class="fa arrow"></span></a>
 						<ul class="nav nav-second-level collapse">
 							<li><a href="{{ route('researches.index') }}"> Pesquisas </a></li>

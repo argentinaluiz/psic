@@ -11,6 +11,10 @@
                 menus:[
                     { name: "Dashboard", routeName: 'psych.dashboard' },
                     { name: "Perguntas", routeName: 'psych.class_meetings.list' },
+                    { name: "Tipos de Alternativas", routeName: 'psych.type_choices.list' },
+                    { name: "Tipos / Alternativas", routeName: 'psych.class_choosings.list' },
+                ],
+                 lists:[
                     { name: "Pesquisas", routeName: 'psych.researches.list' },
                     { name: "Pesquisas ClassSet", routeName: 'psych.class_sets.list' },
                     { name: "Recursos", routeName: 'psych.class_toolkits.list' },

@@ -26,4 +26,12 @@
                 </li>
 			</ul>
 		</li>
+		<li>
+			<a href=""><i class="fa fa-edit"></i> <span class="nav-label">Interesses</span> <span class="fa arrow"></span></a>
+			<ul class="nav nav-second-level">
+				<li v-for="list in lists">
+                    <router-link :to="{name: list.routeName}">{{list.name}}</router-link>
+                </li>
+			</ul>
+		</li>
 	</ul>
