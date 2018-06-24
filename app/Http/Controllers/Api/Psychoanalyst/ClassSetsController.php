@@ -12,6 +12,7 @@ class ClassSetsController extends Controller
     {
         $results = ClassSet
             ::where('psychoanalyst_id', \Auth::user()->userable->id)
+            ->groupBy ('class_sets.category_id',  'id')
             ->get()
             ->toArray();//Utilizamos o método toArray para transformar a resposta em array e, antes de retornar, removemos os dados desnecessários, que neste caso são os dados do psicanalista. Lembrando que quanto menos dados for passado na resposta, mais rápida será a aplicação.
 

@@ -13,19 +13,14 @@
 					<div class="ibox float-e-margins">
 						<div class="ibox-content">
 							<div class="file-manager">
-								<h5>Categorias</h5>
-								<ul class="category-list" style="padding: 0">
-						            <li v-for="classSet in classSets"><a class="file-control" href="" >{{ classSet.category.name }}</a></li>
-						        </ul>
 								
+								<psych-category-list></psych-category-list>
+
 								<div class="clearfix"></div>
 								<div class="hr-line-dashed"></div>
 								
-								<h5 class="tag-title">Tags</h5>
+								<psych-tag-list></psych-tag-list>
 								
-								<ul class="tag-list" style="padding: 0" v-for="classSet in classSets">
-									<li><a href="">{{ classSet.research.tag }}</a></li>
-								</ul>
 								<div class="clearfix"></div>
 								<div class="hr-line-dashed"></div>
 							</div>
@@ -38,7 +33,7 @@
 							
 							<div class="file-box" v-for="classSet in classSets">
 								<div class="file">
-									<a href="#">
+									<a :href="`research/${classSet.research.url}`" target="_blank">
 										<span class="corner"></span>
 										
 										<div class="image">
@@ -62,13 +57,14 @@
 </template>
 
 <script type="text/javascript">
-    import store from '../../../store/store';
+	import store from '../../../store/store';
 
     export default {
+		components:{
+			'psych-category-list' : require('./PsychCategoryList.vue'),
+			'psych-tag-list' : require('./PsychTagList.vue')
+		},
         computed: {
-			storeType(){
-                return 'psych';
-            },
             classSets() {
                 return store.state.psych.classSet.classSets;
             }
