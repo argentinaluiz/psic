@@ -77,18 +77,13 @@
 
 <script type="text/javascript">
 	import store from '../../store/store';
-	import PsychDepressao from './treatment/PsychDepressao.vue';
-	import PsychNeurose from './treatment/PsychNeurose.vue';
-	import PsychPsiconeurose from './treatment/PsychPsiconeurose.vue';
-	import PsychConversao from './treatment/PsychConversao.vue';
 
     export default {
-		 components:{
-			'psych-depressao' : PsychDepressao,
-			'psych-neurose' : PsychNeurose,
-			'psych-psiconeurose' : PsychPsiconeurose,
-			'psych-conversao' : PsychConversao,
-           
+		components:{
+            'psych-depressao' : require('./treatment/PsychDepressao.vue'),
+            'psych-neurose' : require('./treatment/PsychNeurose.vue'),
+            'psych-psiconeurose' : require('./treatment/PsychPsiconeurose.vue'),
+            'psych-conversao' : require('./treatment/PsychConversao.vue')
         }
         
     }
