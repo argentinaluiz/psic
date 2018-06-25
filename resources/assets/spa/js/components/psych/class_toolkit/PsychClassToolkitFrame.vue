@@ -4,21 +4,6 @@
             <span class="corner"></span>
 
             <div class="image">
-                <img class="img-responsive" src="" alt="">
-            </div>
-            <div class="file-name">
-                <h5>Título</h5>
-                <p class="cut">Descrição</p>
-                <small>Ano</small>
-            </div>
-        </a>
-    </div>
-    <!-- 
-    <div class="file">
-        <a href="#">
-            <span class="corner"></span>
-
-            <div class="image">
                 <img class="img-responsive" :src="`/storage/tool/${classToolkit.tool.image}`" alt="">
             </div>
             <div class="file-name">
@@ -28,7 +13,6 @@
             </div>
         </a>
     </div>
-    -->
 </template>
 
 <script type="text/javascript">

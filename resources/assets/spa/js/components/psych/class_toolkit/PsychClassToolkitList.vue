@@ -39,9 +39,6 @@
             'psych-class-toolkit-sub-rank-list' : require('./PsychClassToolkitSubRankList.vue')
         },
         computed: {
-        	storeType(){
-                return 'psych';
-            },
             classToolkits() {
                 return store.state.psych.classToolkit.classToolkits;
             }
