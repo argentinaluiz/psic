@@ -39,10 +39,11 @@ Route::group([
             });
             Route::resource('class_informations', 'ClassInformationsController', ['only' => ['index', 'show']]);
             Route::resource('class_meetings', 'ClassMeetingsController', ['only' => ['index', 'show']]);
-            Route::get('class_toolkits', function (){
+            /*Route::get('class_toolkits', function (){
                 $class_toolkits = \App\Models\Painel\ClassToolkit::all();
                 return \App\Http\Resources\ClassToolkitResource::collection($class_toolkits);
             });
+            */
             Route::get('ranks', function (){
                 $ranks = \App\Models\Painel\Rank::with('subRanks.subSubRanks')->get();
                 return \App\Http\Resources\RankCustomResource::collection($ranks);
@@ -57,7 +58,7 @@ Route::group([
             });
             
             //Route::resource('tools', 'ToolsController', ['only' => ['index', 'show']]);
-            //Route::resource('class_toolkits', 'ClassToolkitsController', ['only' => ['index', 'show']]);
+            Route::resource('class_toolkits', 'ClassToolkitsController', ['only' => ['index', 'show']]);
             Route::resource('class_choosings', 'ClassChoosingsController', ['only' => ['index', 'show']]);
             Route::resource('researches', 'ResearchesController', ['only' => ['index', 'show']]);
             Route::resource('class_sets', 'ClassSetsController', ['only' => ['index', 'show']]);

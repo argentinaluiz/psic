@@ -40,11 +40,20 @@
         },
         computed: {
             classToolkits() {
-                return store.state.psych.classToolkit.classToolkits;
+               return store.state.psych.classToolkit.classToolkits;
             }
         },
         mounted() {
             store.dispatch('psych/classToolkit/query'); 
+            /*this.$http.get('psychoanalyst/class_toolkits').then((response) =>{
+                //console.log ('success', response)
+                this.class_toolkits = response.json().then ((data) => {
+                    console.log(data)
+                    this.class_toolkits = data
+                })
+                }, (response)=>{
+                console.log ('error', response);
+            })*/
         }
     }
 </script>

@@ -4,7 +4,7 @@
             <span class="corner"></span>
 
             <div class="image">
-                <img class="img-responsive" :src="`/storage/tool/${classToolkit.tool.image}`" alt="">
+                <img class="img-responsive" :src="`/storage/tool/${classToolkit.tool.image}`" alt=""> 
             </div>
             <div class="file-name">
                 <h5>{{ classToolkit.tool.title }}</h5>
