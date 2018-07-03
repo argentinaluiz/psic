@@ -46,7 +46,7 @@ Route::group([
             */
             Route::get('ranks', function (){
                 $ranks = \App\Models\Painel\Rank::with('subRanks.subSubRanks')->get();
-                return \App\Http\Resources\RankCustomResource::collection($ranks);
+                return new \App\Http\Resources\RankCustomResource($ranks);
             });
             Route::get('tools', function (){
                 $tools = \App\Models\Painel\Tool::all();

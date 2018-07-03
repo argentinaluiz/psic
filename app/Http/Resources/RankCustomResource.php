@@ -11,18 +11,18 @@ class RankCustomResource extends ResourceCollection
     {
         $ranks = $this->collection; //terá a coleção de ranks
             $ranksResult = [];
-            $subRanks = $ranks->subRanks;
-            foreach($ranks as $rank){
-                $rankNew = ['name' => $rank->name, 'subRanks' => [] ];
-                foreach($subRank->subSubRanks as $subSubRank) {  //novamente subsubrank é ClassToolKit
-                    $subRankNew = ['name' => $subRank->subRank->name, 'subSubRanks' => [] ];
-                    foreach($subRank->subSubRanks as $subSubRank) {  //novamente subsubrank é ClassToolKit
+            foreach ($ranks as $rank) {
+                $rankNew = ['name' => $rank->name, 'subRanks' => []];
+                foreach ($rank->subRanks as $subRank) {//lembre-se que subrank é ClassToolKit
+                    $subRankNew = ['name' => $subRank->subRank->name, 'subSubRanks' => []];
+                    foreach ($subRank->subSubRanks as $subSubRank) {  //novamente subsubrank é ClassToolKit
                         $subSubRankNew = ['name' => $subSubRank->subSubRank->name];
                         $subRankNew['subSubRanks'][] = $subSubRankNew;
                     }
                     $rankNew['subRanks'][] = $subRankNew;
                 }
-            $rankResult[] = $rankNew;
+                $rankResult[] = $rankNew;
             }
+            return $rankResult;
     }
 }
