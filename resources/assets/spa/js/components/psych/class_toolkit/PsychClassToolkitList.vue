@@ -41,6 +41,7 @@
         computed: {
             classToolkits() {
                return store.state.psych.classToolkit.classToolkits;
+               //console.log(classToolkits)
             }
         },
         mounted() {

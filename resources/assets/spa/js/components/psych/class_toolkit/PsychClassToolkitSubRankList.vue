@@ -2,15 +2,15 @@
     <div class="panel panel-default" >
         <div class="panel-heading">
             <h5 class="panel-title"> 
-                <a data-toggle="collapse"  :href="`#collapse${id}`"  aria-expanded="false" class="collapsed">{{ classToolkit.sub_rank.name }}</a>
+                <a data-toggle="collapse"  :href="`#collapse${id}`"  aria-expanded="false" class="collapsed">{{ classToolkit.subRanks.name }}</a>
             </h5>
         </div>
 		
         <div :id="`collapse${id}`" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
             <div class="panel-body">
-                <div class="tabs-container" v-if="classToolkit.sub_sub_rank">
+                <div class="tabs-container" v-if="classToolkit.subRanks">
                     <ul class="nav nav-tabs">
-                        <li class="active"><a data-toggle="tab" :href="`#tab-${id}`"> {{ classToolkit.sub_sub_rank.name }}</a></li>
+                        <li class="active"><a data-toggle="tab" :href="`#tab-${id}`"> {{ classToolkit.subRanks.name }}</a></li>
                     </ul>
                     <div class="tab-content">
                         <div :id="`tab-${id}`" class="tab-pane active">

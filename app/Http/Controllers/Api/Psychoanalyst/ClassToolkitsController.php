@@ -13,7 +13,11 @@ class ClassToolkitsController extends Controller
 {
     public function index()
     {
-        return RankCustomResource($ranks);
+        $ranks = Rank
+            ::with('subRanks.subSubRanks')
+            ->get();
+        return new \App\Http\Resources\RankCustomResource($ranks);
+     //  return RankCustomResource::collection($ranks);
        /*$ranks = Rank
             ::with('subRanks.subSubRanks')
            // ->join('class_toolkits', 'class_toolkits.rank_id', '=', 'ranks.id')
