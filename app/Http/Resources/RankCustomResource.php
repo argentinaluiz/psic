@@ -18,7 +18,11 @@ class RankCustomResource extends ResourceCollection
                     foreach ($subRank->subSubRanks as $subSubRank) {  //novamente subSubRank é ClassToolkit
                         $subSubRankNew = ['name' => $subSubRank->subSubRank->name, 'tools'  => []];
                         foreach ($subSubRank->tools as $tool) {  //tool é ClassToolkit
-                            $toolNew = ['name' => $tool->tool->name];
+                            $toolNew = ['title'         => $tool->tool->title,
+                                        'image'         => $tool->tool->image,
+                                        'description'   => $tool->tool->description,
+                                        'year'          => $tool->tool->year
+                                        ];
                             $subRankNew['tools'][] = $toolNew;
                         }
                         $subRankNew['subSubRanks'][] = $subSubRankNew;
