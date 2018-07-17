@@ -20,7 +20,7 @@
             }
         },
         mounted() {
-            store.dispatch('psych/classToolkit/query');
+           // store.dispatch('psych/classToolkit/query');
         }
     }
 </script>

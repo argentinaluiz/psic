@@ -14,8 +14,10 @@ class ClassToolkitsController extends Controller
     public function index()
     {
         $ranks = Rank
-            ::with('subRanks.subSubRanks')
-            ->get();
+            ::with('subRanks.subSubRanks.tools')
+                ->join('class_toolkits', 'class_toolkits.rank_id', '=', 'ranks.id')
+                ->where('class_toolkits.psychoanalyst_id', \Auth::user()->userable->id)
+                ->get();
         return new \App\Http\Resources\RankCustomResource($ranks);
      //  return RankCustomResource::collection($ranks);
        /*$ranks = Rank

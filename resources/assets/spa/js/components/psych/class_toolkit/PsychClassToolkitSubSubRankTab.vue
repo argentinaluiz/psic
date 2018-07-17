@@ -28,10 +28,10 @@
         computed: {
             classToolkit(){
                 return this.$deepModel('psych.classToolkit.classToolkit');
-            },
+            }
         },
         mounted() {
-            store.dispatch('psych/classToolkit/query');
+           // store.dispatch('psych/classToolkit/query');
         }
     }
 </script>

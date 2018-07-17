@@ -45,7 +45,7 @@
             }
         },
         mounted() {
-            store.dispatch('psych/classToolkit/query'); 
+            store.dispatch('psych/classToolkit/query');
             /*this.$http.get('psychoanalyst/class_toolkits').then((response) =>{
                 //console.log ('success', response)
                 this.class_toolkits = response.json().then ((data) => {

@@ -20,12 +20,12 @@
                                         <a href="#">
                                             <span class="corner"></span>
                                             <div class="image">
-                                                <img class="img-responsive" :src="`/storage/tool/${classToolkit.tool.image}`" alt="">
+                                                <img class="img-responsive" :src="`/storage/tool/${classToolkit.subRanks.tools.image}`" alt="">
                                             </div>
                                             <div class="file-name">
-                                                <h5>{{ classToolkit.tool.title }}</h5>
-                                                <p class="cut">{{ classToolkit.tool.description }}</p>
-                                                <small>{{ classToolkit.tool.year }}</small>
+                                                <h5>{{ classToolkit.subRanks.tools.title }}</h5>
+                                                <p class="cut">{{ classToolkit.subRanks.tools.description }}</p>
+                                                <small>{{ classToolkit.subRanks.tools.year }}</small>
                                             </div>
                                         </a>
                                     </div>
@@ -40,12 +40,12 @@
                             <span class="corner"></span>
 
                             <div class="image">
-                                <img class="img-responsive" :src="`/storage/tool/${classToolkit.tool.image}`" alt="">
+                                <img class="img-responsive" :src="`/storage/tool/${classToolkit.subRanks.tools.image}`" alt="">
                             </div>
                             <div class="file-name">
-                                <h5>{{ classToolkit.tool.title }}</h5>
-                                <p class="cut">{{ classToolkit.tool.description }}</p>
-                                <small>{{ classToolkit.tool.year }}</small>
+                                <h5>{{ classToolkit.subRanks.tools.title }}</h5>
+                                <p class="cut">{{ classToolkit.subRanks.tools.description }}</p>
+                                <small>{{ classToolkit.subRanks.tools.year }}</small>
                             </div>
                         </a>
                     </div>
@@ -75,7 +75,7 @@
             }
         },
         mounted() {
-            store.dispatch('psych/classToolkit/query');
+           // store.dispatch('psych/classToolkit/query');
             this.id = this._uid;
         }
     }
