@@ -6,31 +6,30 @@ use Illuminate\Http\Resources\Json\ResourceCollection;
 
 class RankCustomResource extends ResourceCollection
 {
-
     public function toArray($request)
-    {
-        $ranks = $this->collection; //terá a coleção de ranks
-            $ranksResult = [];
-            foreach ($ranks as $rank) {
-                $rankNew = ['name' => $rank->name, 'subRanks' => []];
-                foreach ($rank->subRanks as $subRank) {//lembre-se que subRank é ClassToolkit
-                    $subRankNew = ['name' => $subRank->subRank->name, 'subSubRanks' => []];
-                    foreach ($subRank->subSubRanks as $subSubRank) {  //novamente subSubRank é ClassToolkit
-                        $subSubRankNew = ['name' => $subSubRank->subSubRank->name, 'tools'  => []];
-                        foreach ($subSubRank->tools as $tool) {  //tool é ClassToolkit
+     {
+		$ranks = $this->collection; //terá a coleção de ranks
+		$ranksResult = [];
+		foreach ($ranks as $rank) {
+			$rankNew = ['name' => $rank->name, 'subRanks' => []];
+                 foreach ($rank->subRanks as $subRank) {//lembre-se que subRank é ClassToolkit
+                     $subRankNew = ['name' => $subRank->subRank->name, 'subSubRanks' => []];
+                     foreach ($subRank->subSubRanks as $subSubRank) {  //novamente subSubRank é ClassToolkit
+                         $subSubRankNew = ['name' => $subSubRank->subSubRank->name, 'tools'  => []];
+                         foreach ($subSubRank->tools as $tool) {  //tool é ClassToolkit
                             $toolNew = ['title'         => $tool->tool->title,
-                                        'image'         => $tool->tool->image,
-                                        'description'   => $tool->tool->description,
-                                        'year'          => $tool->tool->year
-                                        ];
-                            $subRankNew['tools'][] = $toolNew;
-                        }
-                        $subRankNew['subSubRanks'][] = $subSubRankNew;
+										'image'         => $tool->tool->image,
+										'description'   => $tool->tool->description,
+										'year'          => $tool->tool->year
+							];
+							$subSubRankNew['tools'][] = $toolNew;
                     }
-                    $rankNew['subRanks'][] = $subRankNew;
+					$subRankNew['subSubRanks'][] = $subSubRankNew;
                 }
-                $rankResult[] = $rankNew;
+				$rankNew['subRanks'][] = $subRankNew;
             }
-            return $rankResult;
+			$ranksResult[] = $rankNew;
+		}
+		return $ranksResult;
     }
 }

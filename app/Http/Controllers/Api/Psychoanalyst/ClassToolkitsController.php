@@ -13,11 +13,12 @@ class ClassToolkitsController extends Controller
 {
     public function index()
     {
+        $userId = \Auth::user()->userable->id;
         $ranks = Rank
             ::with('subRanks.subSubRanks.tools')
-                ->join('class_toolkits', 'class_toolkits.rank_id', '=', 'ranks.id')
-                ->where('class_toolkits.psychoanalyst_id', \Auth::user()->userable->id)
-                ->get();
+				->whereHas('tools',function($query) use($userId){
+					$query->where('psychoanalyst_id',$userId);
+				})->get();
         return new \App\Http\Resources\RankCustomResource($ranks);
      //  return RankCustomResource::collection($ranks);
        /*$ranks = Rank
