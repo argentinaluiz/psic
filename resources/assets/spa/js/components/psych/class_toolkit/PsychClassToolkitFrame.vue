@@ -19,6 +19,7 @@
     import store from '../../../store/store';
 
     export default {
+        props: ['classToolkit'],
         computed: {
             classToolkits() {
                 return store.state.psych.classToolkit.classToolkits;
