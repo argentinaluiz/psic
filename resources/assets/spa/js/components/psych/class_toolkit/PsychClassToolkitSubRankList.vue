@@ -1,54 +1,25 @@
 <template>
-    <div class="panel panel-default" >
+    <div v-for="subRank in rank.subRanks" class="panel panel-default" >
         <div class="panel-heading">
             <h5 class="panel-title"> 
-                <a data-toggle="collapse"  :href="`#collapse${id}`"  aria-expanded="false" class="collapsed">{{ classToolkit.subRanks.name }}</a>
+                <a data-toggle="collapse"  :href="`#collapse${id}`"  aria-expanded="false" class="collapsed">{{ subRanks.name }}</a>
             </h5>
         </div>
 		
         <div :id="`collapse${id}`" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
             <div class="panel-body">
-                <div class="tabs-container" v-if="classToolkit.subRanks">
+                <div class="tabs-container" v-if="subRanks">
                     <ul class="nav nav-tabs">
-                        <li class="active"><a data-toggle="tab" :href="`#tab-${id}`"> {{ classToolkit.subRanks.name }}</a></li>
+                        <li class="active"><a data-toggle="tab" :href="`#tab-${id}`"> {{ subRanks.name }}</a></li>
                     </ul>
-                    <div class="tab-content">
-                        <div :id="`tab-${id}`" class="tab-pane active">
-                            <div class="panel-body">
-                                <div class="file-box">
-                                    <div class="file">
-                                        <a href="#">
-                                            <span class="corner"></span>
-                                            <div class="image">
-                                                <img class="img-responsive" :src="`/storage/tool/${classToolkit.subRanks.subSubRanks.tools.image}`" alt="">
-                                            </div>
-                                            <div class="file-name">
-                                                <h5>{{ classToolkit.subRanks.subSubRanks.tools.title }}</h5>
-                                                <p class="cut">{{ classToolkit.subRanks.subSubRanks.tools.description }}</p>
-                                                <small>{{ classToolkit.subRanks.subSubRanks.tools.year }}</small>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <template>
+                        <psych-class-toolkit-sub-sub-rank-tab></psych-class-toolkit-sub-sub-rank-tab>	
+                    </template>
                 </div>
                 <div class="file-box" v-else>
-                    <div class="file">
-                        <a href="#">
-                            <span class="corner"></span>
-
-                            <div class="image">
-                                <img class="img-responsive" :src="`/storage/tool/${classToolkit.subRanks.subSubRanks.tools.image}`" alt="">
-                            </div>
-                            <div class="file-name">
-                                <h5>{{ classToolkit.subRanks.subSubRanks.tools.title }}</h5>
-                                <p class="cut">{{ classToolkit.subRanks.subSubRanks.tools.description }}</p>
-                                <small>{{ classToolkit.subRanks.subSubRanks.tools.year }}</small>
-                            </div>
-                        </a>
-                    </div>
+                    <template>
+                        <psych-class-toolkit-frame></psych-class-toolkit-frame>	
+                    </template>
                 </div>
             </div>
         </div>
@@ -66,6 +37,7 @@
         }, 
         components:{
             'psych-class-toolkit-sub-sub-rank-list' : require('./PsychClassToolkitSubSubRankList.vue'),
+            'psych-class-toolkit-sub-sub-rank-tab' : require('./PsychClassToolkitSubSubRankTab.vue'),
             'psych-class-toolkit-frame' : require('./PsychClassToolkitFrame.vue')
         },
         props: ['classToolkit'],

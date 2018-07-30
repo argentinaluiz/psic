@@ -1,7 +1,7 @@
 <template>    
     <div class="tabs-container">
-        <ul class="nav nav-tabs">
-            <li class="active"><a data-toggle="tab" :href="`#tab-${index}`"> {{ classToolkit.subRanks.subSubRanks.name }}</a></li>
+        <ul v-for="subSubRank in subRank.subSubRanks" class="nav nav-tabs">
+            <li class="active"><a data-toggle="tab" :href="`#tab-${index}`"> {{ subSubRanks.name }}</a></li>
         </ul>
         <div class="tab-content">
             <div :id="`tab-${index}`" class="tab-pane active">
