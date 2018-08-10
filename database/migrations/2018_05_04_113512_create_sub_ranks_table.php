@@ -16,6 +16,10 @@ class CreateSubRanksTable extends Migration
         Schema::create('sub_ranks', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
+            $table->integer('rank_id')->unsigned();
+            $table->foreign('rank_id')->references('id')->on('ranks');
+            $table->integer('parent_id')->unsigned()->nullable();
+            $table->foreign('parent_id')->references('id')->on('sub_ranks');
             $table->timestamps();
         });
     }

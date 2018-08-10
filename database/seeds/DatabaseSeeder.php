@@ -32,7 +32,6 @@ class DatabaseSeeder extends Seeder
         $this->call(ResearchesTableSeeder::class);
         $this->call(RanksTableSeeder::class);
         $this->call(SubRanksTableSeeder::class);
-        $this->call(SubSubRanksTableSeeder::class);
         $this->call(ToolsTableSeeder::class);
         $this->call(ClassOptingsTableSeeder::class);
 

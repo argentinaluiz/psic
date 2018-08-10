@@ -231,7 +231,7 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['aut
     Route::resource('tools', 'ToolsController');
     Route::resource('ranks', 'RanksController');
     Route::resource('sub_ranks', 'SubRanksController');
-    Route::resource('sub_sub_ranks', 'SubSubRanksController');
+   // Route::resource('sub_sub_ranks', 'SubSubRanksController');
 
   });
 
@@ -253,7 +253,7 @@ Route::prefix('admin')->group(function () {
         Route::name('tools.index')->get('tools', 'ToolsController@index');
         Route::name('ranks.index')->get('ranks', 'RanksController@index');
         Route::name('sub_ranks.index')->get('sub_ranks', 'SubRanksController@index');
-        Route::name('sub_sub_ranks.index')->get('sub_sub_ranks', 'SubSubRanksController@index');
+        //Route::name('sub_sub_ranks.index')->get('sub_sub_ranks', 'SubSubRanksController@index');
         Route::name('categories.index')->get('categories', 'CategoriesController@index');
     });
 });

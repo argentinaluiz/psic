@@ -8,8 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class SubRank extends Model implements TableInterface
 {
     protected $fillable = [
-        'name'
+        'name',
+        'rank_id' ,
+        'parent_id'
     ];
+
+    public function rank(){
+        return $this->belongsTo(Rank::class);
+    }
 
     public function toolkits()
     {
@@ -28,6 +34,10 @@ class SubRank extends Model implements TableInterface
                 return $this->id;
             case 'Nome':
                 return $this->name;
+            case 'Categoria':
+                return $this->rank_id;
+            case 'Subcategoria':
+                return $this->parent_id;
         }
     }
 }

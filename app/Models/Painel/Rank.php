@@ -16,10 +16,9 @@ class Rank extends Model implements TableInterface
         return $this->hasMany(ClassToolkit::class);
     }
 
-
     public function subRanks()
     {
-        return $this->hasMany(ClassToolkit::class, 'rank_id', 'id');
+        return $this->hasMany(SubRank::class, 'rank_id', 'id');
     }
 
     public function getTableHeaders()

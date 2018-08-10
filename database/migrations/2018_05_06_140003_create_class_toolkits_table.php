@@ -19,10 +19,6 @@ class CreateClassToolkitsTable extends Migration
             $table->foreign('tool_id')->references('id')->on('tools');
             $table->integer('rank_id')->unsigned();
             $table->foreign('rank_id')->references('id')->on('ranks');
-            $table->integer('sub_rank_id')->unsigned();
-            $table->foreign('sub_rank_id')->references('id')->on('sub_ranks');
-            $table->integer('sub_sub_rank_id')->unsigned()->nullable();
-            $table->foreign('sub_sub_rank_id')->references('id')->on('sub_sub_ranks');
             $table->integer('psychoanalyst_id')->unsigned();
             $table->foreign('psychoanalyst_id')->references('id')->on('psychoanalysts');
            // $table->unique(['tool_id','rank_id','sub_rank_id'],'class_toolkit_unique');

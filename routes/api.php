@@ -45,7 +45,7 @@ Route::group([
             });
             */
             Route::get('ranks', function (){
-                $ranks = \App\Models\Painel\Rank::with('subRanks.subSubRanks.tools')->get();
+                $ranks = \App\Models\Painel\Rank::with('subRanks.tools')->get();
                 return new \App\Http\Resources\RankCustomResource($ranks);
             });
             //Se eu quiser receber apenas um recurso min 35:49
