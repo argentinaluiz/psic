@@ -170,6 +170,31 @@ class SubRanksTableSeeder extends Seeder
             'rank_id' =>'5',
             'parent_id' => null
         ]);
+        $parent1 = SubRank::firstOrCreate([
+            'name' =>'Contos',
+            'rank_id' =>'5',
+            'parent_id' => '21'
+        ]);
+        $parent2 = SubRank::firstOrCreate([
+            'name' =>'Fábulas',
+            'rank_id' =>'5',
+            'parent_id' => '21'
+        ]);
+        $parent3 = SubRank::firstOrCreate([
+            'name' =>'Clips',
+            'rank_id' =>'5',
+            'parent_id' => '18'
+        ]);
+        $parent4 = SubRank::firstOrCreate([
+            'name' =>'Filmes',
+            'rank_id' =>'5',
+            'parent_id' => '18'
+        ]);
+        $parent5 = SubRank::firstOrCreate([
+            'name' =>'Animações',
+            'rank_id' =>'5',
+            'parent_id' => '18'
+        ]);
         $metafora1 = SubRank::firstOrCreate([
             'name' =>'Individuação',
             'rank_id' =>'6',

@@ -12,8 +12,8 @@ class ClassToolkitResource extends Resource
         return [
             'id' => $this->id,
             'tool_id' => $this->tool,
-            'rank_id'=> $this->rank,
-           // 'sub_ranks' => $this->subRanks,
+            'sub_ranks' => $this->subRanks
+            //'rank_id'=> $this->rank,
            // 'ranks' => RankResource::collection($this->subRanks),
         ];
     }

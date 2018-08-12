@@ -10,7 +10,7 @@ class ClassToolkit extends Model
 
     protected $fillable = [
         'tool_id',
-        'rank_id',
+        'sub_rank_id',
         'psychoanalyst_id'
     ];
 
@@ -19,10 +19,14 @@ class ClassToolkit extends Model
         return $this->belongsTo(Tool::class);
     }
 
-    public function rank(){
-        return $this->belongsTo(Rank::class);
+    public function subRank(){
+        return $this->belongsTo(SubRank::class);
     }
 
+     public function subRanks(){
+        return $this->hasMany(ClassToolKit::class, 'sub_rank_id', 'sub_rank_id')
+            ->groupBy('sub_rank_id');
+    }
 
     public function tools(){
         return $this->hasMany(ClassToolKit::class, 'tool_id', 'tool_id')
@@ -38,7 +42,7 @@ class ClassToolkit extends Model
     {
         $data = parent::toArray();
         $data['tool'] = $this->tool;
-        $data['rank'] = $this->rank;
+        $data['sub_rank'] = $this->subRank;
         $data['psychoanalyst'] = $this->psychoanalyst;
         return $data;
     }
