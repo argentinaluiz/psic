@@ -23,16 +23,6 @@ class ClassToolkit extends Model
         return $this->belongsTo(SubRank::class);
     }
 
-    public function subRanks(){
-        return $this->hasMany(ClassToolKit::class, 'sub_rank_id', 'sub_rank_id')
-            ->groupBy('sub_rank_id');
-    }
-
-    public function tools(){
-        return $this->hasMany(ClassToolKit::class, 'tool_id', 'tool_id')
-            ->groupBy('tool_id');
-    }
-
     public function psychoanalyst(){
         return $this->belongsTo(Psychoanalyst::class);
     }
