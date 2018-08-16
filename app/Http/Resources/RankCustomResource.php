@@ -7,10 +7,33 @@ use Illuminate\Http\Resources\Json\ResourceCollection;
 class RankCustomResource extends ResourceCollection
 {
     public function toArray($request)
-     {
+    {
 		$ranks = $this->collection; //terá a coleção de ranks
 		return $ranks;
-
+		
+		$ranksResult = [];
+		foreach ($ranks as $rank) {
+			$rankNew = ['name' => $rank->name, 'subRanks' => []];
+                foreach ($rank->subRanks as $subRank) {
+                     $subRankNew = [
+                     	'name' => $subRank->name, 'parent' => $subRank->parent,
+                     	'tools' => []
+                     ];
+                    foreach ($subRank->toolkits as $toolkit) {
+                            $toolNew = ['title'         => $toolkit->tool->title,
+										'image'         => $toolkit->tool->image,
+										'description'   => $toolkit->tool->description,
+										'year'          => $toolkit->tool->year
+							];
+							$subRankNew['tools'][] = $toolNew;
+                    }//end foreach $subRank
+                }//end foreach $rank
+				$rankNew['subRanks'][] = $subRankNew;
+				$ranksResult[] = $rankNew;
+            }
+			return $ranksResult;
+		}
+	}
 		/*
 		foreach ($ranks as $rank) {
 			$rankNew = ['name' => $rank->name, 'subRanks' => []];
@@ -33,5 +56,3 @@ class RankCustomResource extends ResourceCollection
 			$ranksResult[] = $rankNew;
 		}*/
 		//return $ranksResult;
-    }
-}

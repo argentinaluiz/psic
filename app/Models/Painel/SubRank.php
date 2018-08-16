@@ -17,6 +17,10 @@ class SubRank extends Model implements TableInterface
         return $this->belongsTo(Rank::class);
     }
 
+    public function parent(){
+        return $this->belongsTo(SubRank::class);
+    }
+
     public function toolkits()
     {
         return $this->hasMany(ClassToolkit::class);

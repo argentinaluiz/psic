@@ -23,7 +23,7 @@ class ClassToolkit extends Model
         return $this->belongsTo(SubRank::class);
     }
 
-     public function subRanks(){
+    public function subRanks(){
         return $this->hasMany(ClassToolKit::class, 'sub_rank_id', 'sub_rank_id')
             ->groupBy('sub_rank_id');
     }

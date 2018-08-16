@@ -33,9 +33,9 @@
 											</div>
 											 <div :id="`collapse${id}`" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
 												<div class="panel-body">
-													<div  v-for="subSubRank in subRank.subSubRanks" class="tabs-container">
+													<div  class="tabs-container">
 														<ul  class="nav nav-tabs">
-															<li><a data-toggle="tab" :href="`#tab-${index}`"> {{ subSubRank.name }}</a>  
+															<li><a data-toggle="tab" :href="`#tab-${index}`"> {{ subRank.name }}</a>  
 															</li>
 														</ul>	
                                                         <div class="tab-content">
@@ -43,13 +43,13 @@
                                                                 <div class="panel-body">
                                                                     <div class="row">
                                                                         <div class="col-sm-12">
-                                                                            <div v-for="tool in subSubRank.tools" class="file-box">
+                                                                            <div v-for="toolkit in subRank.toolkits" class="file-box">
                                                                                 <div  class="file">
                                                                                     <a href="#">
                                                                                         <span class="corner"></span>
 
                                                                                         <div class="image">
-                                                                                            <img class="img-responsive" :src="`/storage/tool/${tool.image}`" alt=""> 
+                                                                                            <img class="img-responsive" :src="`/storage/tool/${toolkit.tool.image}`" alt=""> 
                                                                                         </div>
                                                                                         <div class="file-name">
                                                                                             <h5>{{ tool.title }}</h5>

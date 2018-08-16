@@ -7,7 +7,6 @@ use App\Http\Controllers\Controller;
 use App\Models\Painel\ClassToolkit;
 use App\Models\Painel\Rank;
 use App\Models\Painel\SubRank;
-use App\Models\Painel\SubSubRank;
 
 class ClassToolkitsController extends Controller
 {
@@ -15,8 +14,8 @@ class ClassToolkitsController extends Controller
     {
         $userId = \Auth::user()->userable->id;
         $ranks = Rank
-            ::with('subRanks.subSubRanks.tools')
-				->whereHas('tools',function($query) use($userId){
+            ::with('subRanks.toolkits')
+				->whereHas('subRanks.toolkits',function($query) use($userId){
 					$query->where('psychoanalyst_id',$userId);
 				})->get();
         return new \App\Http\Resources\RankCustomResource($ranks);
