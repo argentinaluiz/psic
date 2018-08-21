@@ -18,7 +18,7 @@ const actions = {
     query(context){
         Psychoanalyst.classToolkit.query()
             .then(response => {
-                context.commit('setClassToolkits', response.data.data);
+                context.commit('setClassToolkits', response.data.data.data);
             });
     },
     get(context, classToolkitId){
