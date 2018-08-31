@@ -33,7 +33,7 @@
 											</div>
 											 <div :id="`collapse${subRank.id}`" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
 												<div class="panel-body">
-													<div  class="tabs-container" v-if="parent !== null">
+													<div  class="tabs-container" v-if="parent_id !== null">
 														<ul  class="nav nav-tabs">
 															<li><a data-toggle="tab" :href="`#tab-${index}`"> {{ subRank.name }}</a>  
 															</li><!-- Aqui deveria ser o nome do parent -->
@@ -64,6 +64,26 @@
                                                                 </div>
                                                             </div>
                                                         </div>
+													</div>
+													 <div class="row" v-else>
+														<div class="col-sm-12">
+															<div v-for="toolkit in subRank.toolkits" class="file-box">
+																<div  class="file">
+																	<a href="#">
+																		<span class="corner"></span>
+
+																		<div class="image">
+																			<img class="img-responsive" :src="`/storage/tool/${toolkit.tool.image}`" alt=""> 
+																		</div>
+																		<div class="file-name">
+																			<h5>{{ toolkit.tool.title }}</h5>
+																			<p class="cut">{{ toolkit.tool.description }}</p>
+																			<small>{{ toolkit.tool.year }}</small>
+																		</div>
+																	</a>           
+																</div>
+															</div>
+														</div>
 													</div>
 												</div>
 											</div>
