@@ -25,18 +25,18 @@
 							<div  class="ibox-content"> 
 								<div class="panel-body">
 									<div class="panel-group">
-										<div v-for="subRank in classToolkit.subRanks" class="panel panel-default">
+										<div v-for="subRank in classToolkit.sub_ranks" class="panel panel-default">
 											<div class="panel-heading">
 												<h5 class="panel-title"> 
-													<a data-toggle="collapse"  :href="`#collapse${id}`"  aria-expanded="false" class="collapsed">{{ subRank.name }}</a>
+													<a data-toggle="collapse"  :href="`#collapse${subRank.id}`"  aria-expanded="false" class="collapsed">{{ subRank.name }}</a>
 												</h5>
 											</div>
-											 <div :id="`collapse${id}`" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+											 <div :id="`collapse${subRank.id}`" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
 												<div class="panel-body">
-													<div  class="tabs-container">
+													<div  class="tabs-container" v-if="parent !== null">
 														<ul  class="nav nav-tabs">
 															<li><a data-toggle="tab" :href="`#tab-${index}`"> {{ subRank.name }}</a>  
-															</li>
+															</li><!-- Aqui deveria ser o nome do parent -->
 														</ul>	
                                                         <div class="tab-content">
                                                             <div :id="`tab-${index}`" class="tab-pane active">
@@ -52,9 +52,9 @@
                                                                                             <img class="img-responsive" :src="`/storage/tool/${toolkit.tool.image}`" alt=""> 
                                                                                         </div>
                                                                                         <div class="file-name">
-                                                                                            <h5>{{ tool.title }}</h5>
-                                                                                            <p class="cut">{{ tool.description }}</p>
-                                                                                            <small>{{ tool.year }}</small>
+                                                                                            <h5>{{ toolkit.tool.title }}</h5>
+                                                                                            <p class="cut">{{ toolkit.tool.description }}</p>
+                                                                                            <small>{{ toolkit.tool.year }}</small>
                                                                                         </div>
                                                                                     </a>           
                                                                                 </div>
@@ -109,7 +109,6 @@
 
 <script type="text/javascript">
     import store from '../../../store/store';
-
     export default {
         data () {
             return {
@@ -123,6 +122,7 @@
         props: ['classToolkit'],
         computed: {
             classToolkits() {
+            console.log(store.state.psych.classToolkit.classToolkits);
                return store.state.psych.classToolkit.classToolkits;
                //console.log(classToolkits)
             }
