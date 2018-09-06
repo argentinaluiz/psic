@@ -28,7 +28,7 @@
 										<div v-for="subRank in classToolkit.sub_ranks" class="panel panel-default">
 											<div class="panel-heading">
 												<h5 class="panel-title"> 
-													<a data-toggle="collapse"  :href="`#collapse${subRank.id}`"  aria-expanded="false" class="collapsed">{{ subRank.parent_id ? subRank.parent_id.name : subRank.name }}</a>
+													<a data-toggle="collapse"  :href="`#collapse${subRank.id}`"  aria-expanded="false" class="collapsed">{{ subRank.parent_id ? subRank.parent.name : subRank.name }}</a>
 												</h5>
 											</div>
 											 <div :id="`collapse${subRank.id}`" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
