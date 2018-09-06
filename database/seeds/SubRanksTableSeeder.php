@@ -121,76 +121,76 @@ class SubRanksTableSeeder extends Seeder
             'parent_id' => null
         ]);
         $video6 = SubRank::firstOrCreate([
-            'name' =>'Crenças e Valores',
+            'name' =>'Contos',
             'rank_id' =>'5',
             'parent_id' => null
         ]);
         $video7 = SubRank::firstOrCreate([
-            'name' =>'Finanças',
+            'name' =>'Crenças e Valores',
             'rank_id' =>'5',
             'parent_id' => null
         ]);
         $video8 = SubRank::firstOrCreate([
-            'name' =>'Liderança',
+            'name' =>'Fábulas',
             'rank_id' =>'5',
             'parent_id' => null
         ]);
         $video9 = SubRank::firstOrCreate([
-            'name' =>'Motivação',
+            'name' =>'Finanças',
             'rank_id' =>'5',
             'parent_id' => null
         ]);
         $video10 = SubRank::firstOrCreate([
-            'name' =>'Planejamento',
+            'name' =>'Liderança',
             'rank_id' =>'5',
             'parent_id' => null
         ]);
         $video11 = SubRank::firstOrCreate([
-            'name' =>'Planejamento de Carreira',
+            'name' =>'Motivação',
             'rank_id' =>'5',
             'parent_id' => null
         ]);
         $video12 = SubRank::firstOrCreate([
-            'name' =>'Poder',
+            'name' =>'Planejamento',
             'rank_id' =>'5',
             'parent_id' => null
         ]);
         $video13 = SubRank::firstOrCreate([
-            'name' =>'Qualidade de Vida no Trabalho',
+            'name' =>'Planejamento de Carreira',
             'rank_id' =>'5',
             'parent_id' => null
         ]);
         $video14 = SubRank::firstOrCreate([
-            'name' =>'Sexualidade',
+            'name' =>'Poder',
             'rank_id' =>'5',
             'parent_id' => null
         ]);
         $video15 = SubRank::firstOrCreate([
+            'name' =>'Qualidade de Vida no Trabalho',
+            'rank_id' =>'5',
+            'parent_id' => null
+        ]);
+        $video16 = SubRank::firstOrCreate([
+            'name' =>'Sexualidade',
+            'rank_id' =>'5',
+            'parent_id' => null
+        ]);
+        $video17 = SubRank::firstOrCreate([
             'name' =>'Individuação',
             'rank_id' =>'5',
             'parent_id' => null
         ]);
         $parent1 = SubRank::firstOrCreate([
-            'name' =>'Contos',
-            'rank_id' =>'5',
-            'parent_id' => '21'
-        ]);
-        $parent2 = SubRank::firstOrCreate([
-            'name' =>'Fábulas',
-            'rank_id' =>'5',
-            'parent_id' => '21'
-        ]);
-        $parent3 = SubRank::firstOrCreate([
             'name' =>'Clips',
             'rank_id' =>'5',
             'parent_id' => '18'
         ]);
-        $parent4 = SubRank::firstOrCreate([
+        $parent2 = SubRank::firstOrCreate([
             'name' =>'Filmes',
             'rank_id' =>'5',
             'parent_id' => '18'
         ]);
-        $parent5 = SubRank::firstOrCreate([
+        $parent3 = SubRank::firstOrCreate([
             'name' =>'Animações',
             'rank_id' =>'5',
             'parent_id' => '18'
