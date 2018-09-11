@@ -30,6 +30,7 @@
 												<h5 class="panel-title"> 
 													<a data-toggle="collapse"  :href="`#collapse${subRank.id}`"  aria-expanded="false" class="collapsed">{{ subRank.parent_id ? subRank.parent.name : subRank.name }}</a>
 												</h5>
+
 											</div>
 											 <div :id="`collapse${subRank.id}`" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
 												<div class="panel-body">
@@ -37,7 +38,7 @@
 														<ul  class="nav nav-tabs">
 															<li><a data-toggle="tab" :href="`#tab-${index}`"> {{ subRank.name }}</a>  
 															</li><!-- Aqui deveria ser o nome do parent -->
-														</ul>	
+														</ul>
                                                         <div class="tab-content">
                                                             <div :id="`tab-${index}`" class="tab-pane active">
                                                                 <div class="panel-body">

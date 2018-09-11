@@ -9,14 +9,15 @@ class RankCustomResource extends ResourceCollection
     public function toArray($request)
     {
 		$ranks = $this->collection; //terá a coleção de ranks
-		return $ranks;
+		//return $ranks;
 		
 		$ranksResult = [];
 		foreach ($ranks as $rank) {
-			$rankNew = ['name' => $rank->name, 'subRanks' => []];
+			$rankNew = ['name' => $rank->name, 'sub_ranks' => []];
                 foreach ($rank->subRanks as $subRank) {
                      $subRankNew = [
-                     	'name' => $subRank->name, 'parent' => $subRank->parent,
+                     	'id' => $subRank->id,
+                     	'name' => $subRank->name,'parent_id' => $subRank->parent_id, 'parent' => $subRank->parent,
                      	'tools' => []
                      ];
                     foreach ($subRank->toolkits as $toolkit) {
@@ -28,7 +29,7 @@ class RankCustomResource extends ResourceCollection
 							$subRankNew['tools'][] = $toolNew;
                     }//end foreach $subRank
                 }//end foreach $rank
-				$rankNew['subRanks'][] = $subRankNew;
+				$rankNew['sub_ranks'][] = $subRankNew;
 				$ranksResult[] = $rankNew;
             }
 			return $ranksResult;
